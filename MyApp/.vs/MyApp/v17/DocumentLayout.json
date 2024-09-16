@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tukel\\source\\repos\\MyApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\dtos\\refreshtokenrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\dtos\\refreshtokenrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\dtos\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\dtos\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|c:\\users\\tukel\\source\\repos\\myapp\\myapp\\services\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B003E5D-B25F-4B3D-B557-3B0122A23BCB}|MyApp\\MyApp.csproj|solutionrelative:myapp\\services\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Models\\User.cs",
+              "RelativeDocumentMoniker": "MyApp\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Models\\User.cs",
+              "RelativeToolTip": "MyApp\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T01:32:15.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\DTOs\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "MyApp\\DTOs\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\DTOs\\RegisterDto.cs",
+              "RelativeToolTip": "MyApp\\DTOs\\RegisterDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T01:31:08.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "MyApp\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "MyApp\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAgAAAAwMzMzMzM7wAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T18:21:12.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RefreshTokenRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\DTOs\\RefreshTokenRequestDto.cs",
+              "RelativeDocumentMoniker": "MyApp\\DTOs\\RefreshTokenRequestDto.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\DTOs\\RefreshTokenRequestDto.cs",
+              "RelativeToolTip": "MyApp\\DTOs\\RefreshTokenRequestDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T17:58:38.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "MyApp\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "MyApp\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABQAAACAzMzMzMwEwBsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T17:54:47.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "MyApp\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Services\\AuthService.cs",
+              "RelativeToolTip": "MyApp\\Services\\AuthService.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAIAwwDcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T16:50:55.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Program.cs",
+              "RelativeDocumentMoniker": "MyApp\\Program.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Program.cs",
+              "RelativeToolTip": "MyApp\\Program.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAAAFIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:48:52.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RefreshTokenDto.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\DTOs\\RefreshTokenDto.cs",
+              "RelativeDocumentMoniker": "MyApp\\DTOs\\RefreshTokenDto.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\DTOs\\RefreshTokenDto.cs",
+              "RelativeToolTip": "MyApp\\DTOs\\RefreshTokenDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T17:54:32.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Services\\ITokenService.cs",
+              "RelativeDocumentMoniker": "MyApp\\Services\\ITokenService.cs",
+              "ToolTip": "C:\\Users\\tukel\\source\\repos\\MyApp\\MyApp\\Services\\ITokenService.cs",
+              "RelativeToolTip": "MyApp\\Services\\ITokenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T16:49:22.116Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
