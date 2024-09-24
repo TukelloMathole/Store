@@ -1,17 +1,19 @@
+import Cookies from 'js-cookie';
+
 const state = {
-  user: null, 
-  accessToken: localStorage.getItem('accessToken') || null, 
-  refreshToken: localStorage.getItem('refreshToken') || null,
-  userRole: localStorage.getItem('role') || null // Load from local storage on init
+  user: null,
+  accessToken: Cookies.get('accessToken') || null, 
+  refreshToken: Cookies.get('refreshToken') || null,
+  userRole: Cookies.get('role') || null // Load from cookies on init
 };
 
 const getters = {
   isAuthenticated: state => {
     return !!state.accessToken;
-  }, 
+  },
   user: state => {
     return state.user;
-  }, 
+  },
   accessToken: state => {
     return state.accessToken;
   },
@@ -27,14 +29,14 @@ const mutations = {
 
   setUserRole(state, role) {
     state.userRole = role;
-    localStorage.setItem('role', role); // Save to local storage
+    Cookies.set('role', role, { secure: true, sameSite: 'Strict' }); // Save to cookies
   },
 
   setTokens(state, tokens) {
     state.accessToken = tokens.accessToken; // Update access token
     state.refreshToken = tokens.refreshToken; // Update refresh token
-    localStorage.setItem('accessToken', tokens.accessToken); // Save to local storage
-    localStorage.setItem('refreshToken', tokens.refreshToken); // Save to local storage
+    Cookies.set('accessToken', tokens.accessToken, { secure: true, sameSite: 'Strict' }); // Save to cookies
+    Cookies.set('refreshToken', tokens.refreshToken, { secure: true, sameSite: 'Strict' }); // Save to cookies
   },
 
   clearUser(state) {
@@ -43,14 +45,14 @@ const mutations = {
 
   clearUserRole(state) {
     state.userRole = null; // Clear user role
-    localStorage.removeItem('role'); // Remove from local storage
+    Cookies.remove('role'); // Remove from cookies
   },
 
   clearTokens(state) {
     state.accessToken = null; // Clear access token
     state.refreshToken = null; // Clear refresh token
-    localStorage.removeItem('accessToken'); // Remove from local storage
-    localStorage.removeItem('refreshToken'); // Remove from local storage
+    Cookies.remove('accessToken'); // Remove from cookies
+    Cookies.remove('refreshToken'); // Remove from cookies
   }
 };
 
