@@ -1,345 +1,389 @@
 <template>
   <div class="admin-dashboard">
-    <p class="title">Admin Dashboard</p>
-    <p class="message">Welcome, Admin! You have full access to the system.</p>
-    <button @click="handleLogout" class="logout">Logout</button>
-
-    <div class="product-management">
-      <h2>Product Management</h2>
-
-      <form @submit.prevent="handleAddProduct" class="form">
-        <label>
-          <input v-model="newProduct.name" type="text" class="input" required placeholder=" ">
-          <span>Name</span>
-        </label>
-        <label>
-          <input v-model="newProduct.description" type="text" class="input" required placeholder=" ">
-          <span>Description</span>
-        </label>
-        <label>
-          <input v-model="newProduct.price" type="number" class="input" step="0.01" required placeholder=" ">
-          <span>Price</span>
-        </label>
-        <label>
-          <input v-model="newProduct.stock" type="number" class="input" required placeholder=" ">
-          <span>Stock</span>
-        </label>
-        <button type="submit" class="submit" :disabled="loading">Add Product</button>
-      </form>
-
-      <div v-if="products.length" class="product-list">
-        <div v-for="product in products" :key="product.id" class="product-card">
-          <h3>{{ product.name }}</h3>
-          <p>Description: {{ product.description }}</p>
-          <p>Price: {{ product.price }}</p>
-          <p>Stock: {{ product.stock }}</p>
-          <button @click="handleEditProduct(product.id)" class="edit-button">Edit</button>
-          <button @click="handleDeleteProduct(product.id)" class="delete-button">Delete</button>
+    <div class="admin-dashboard-header">
+      <h1 class="title">Admin Dashboard</h1>
+      <button class="button float-right">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+        </svg>
+        <div class="text">
+          Export
         </div>
+      </button>
+    </div>
+    <div class="dashboard-content">
+      <!-- User Registration Trends -->
+      <div class="stat-card">
+        <h3>User Registration Trends</h3>
+        <canvas id="userTrendChart"></canvas>
       </div>
 
-      <!-- Modal Overlay -->
-      <div v-if="editMode" class="modal-overlay"></div>
+      <!-- Active Users -->
+      <div class="stat-card">
+        <h3>Active Users</h3>
+        <p>{{ activeUsersCount }}</p>
+      </div>
 
-      <!-- Edit Product Form (Modal) -->
-      <div v-if="editMode" class="edit-product">
-        <h2>Edit Product</h2>
-        <form @submit.prevent="handleUpdateProduct" class="form">
-          <label>
-            <input v-model="editProduct.name" type="text" class="input" required placeholder=" ">
-            <span>Name</span>
-          </label>
-          <label>
-            <input v-model="editProduct.description" type="text" class="input" required placeholder=" ">
-            <span>Description</span>
-          </label>
-          <label>
-            <input v-model="editProduct.price" type="number" class="input" step="0.01" required placeholder=" ">
-            <span>Price</span>
-          </label>
-          <label>
-            <input v-model="editProduct.stock" type="number" class="input" required placeholder=" ">
-            <span>Stock</span>
-          </label>
-          <button type="submit" class="submit">Update Product</button>
-          <button @click="cancelEdit" class="cancel">Cancel</button>
-        </form>
+      <!-- Sales Overview -->
+      <div class="stat-card">
+        <h3>Sales Overview</h3>
+        <canvas id="salesOverviewChart"></canvas>
+      </div>
+
+      <!-- Top Products -->
+      <div class="stat-card">
+        <h3>Top Products</h3>
+        <ul>
+          <li v-for="product in topProducts" :key="product.id">{{ product.name }} - {{ product.sales }} sold</li>
+        </ul>
+      </div>
+
+      <!-- Pending Orders -->
+      <div class="stat-card">
+        <h3>Pending Orders</h3>
+        <p>{{ pendingOrdersCount }}</p>
+      </div>
+
+      <!-- Customer Feedback Rating -->
+      <div class="stat-card">
+        <h3>Average Feedback Rating</h3>
+        <p>{{ averageRating }} ★</p>
+      </div>
+
+      <!-- Traffic Sources -->
+      <div class="stat-card">
+        <h3>Traffic Sources</h3>
+        <canvas id="trafficSourcesChart"></canvas>
+      </div>
+
+      <!-- Session Duration -->
+      <div class="stat-card">
+        <h3>Average Session Duration</h3>
+        <p>{{ averageSessionDuration }} minutes</p>
+      </div>
+
+      <!-- Tasks Overview -->
+      <div class="stat-card">
+        <h3>Tasks Overview</h3>
+        <p>{{ tasksCompletionPercentage }}% completed</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+// Import Chart.js
+import { Chart, registerables } from 'chart.js';
+
+Chart.register(...registerables);
 
 export default {
-  name: 'AdminDashboard',
   data() {
     return {
-      newProduct: {
-        name: '',
-        description: '',
-        price: 0,
-        stock: 0
-      },
-      editProduct: null,
-      editMode: false
+      activeUsersCount: 120,
+      pendingOrdersCount: 5,
+      averageRating: 4.5,
+      averageSessionDuration: 5,
+      tasksCompletionPercentage: 75,
+      topProducts: [
+        { id: 1, name: 'Game A', sales: 150 },
+        { id: 2, name: 'Game B', sales: 90 },
+        { id: 3, name: 'Game C', sales: 70 },
+      ],
     };
   },
-  computed: {
-    ...mapGetters('products', ['products', 'selectedProduct'])
+  mounted() {
+    this.renderCharts();
   },
   methods: {
-    ...mapActions('products', ['fetchProducts', 'addProduct', 'updateProduct', 'deleteProduct', 'fetchProductById']),
+    renderCharts() {
+      // User trend chart
+      const ctx1 = document.getElementById('userTrendChart').getContext('2d');
+      new Chart(ctx1, {
+        type: 'line',
+        data: {
+          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          datasets: [{
+            label: 'User Registrations',
+            data: [10, 20, 15, 25],
+            borderColor: '#60a5fa',
+            backgroundColor: 'rgba(96, 165, 250, 0.2)',
+            fill: true,
+          }]
+        },
+      });
 
-    async handleAddProduct() {
-      try {
-        await this.addProduct(this.newProduct);
-        this.newProduct = { name: '', description: '', price: 0, stock: 0 }; // Reset form
-        // Optional: Show success notification
-      } catch (error) {
-        console.error('Failed to add product:', error);
-        // Optional: Show user-friendly error notification
-      }
+      // Sales overview chart
+      const ctx2 = document.getElementById('salesOverviewChart').getContext('2d');
+      new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: ['Product A', 'Product B', 'Product C'],
+          datasets: [{
+            label: 'Sales',
+            data: [150, 90, 70],
+            backgroundColor: '#34d399',
+          }]
+        },
+      });
+
+      // Traffic sources chart
+      const ctx3 = document.getElementById('trafficSourcesChart').getContext('2d');
+      new Chart(ctx3, {
+        type: 'pie',
+        data: {
+          labels: ['Direct', 'Referral', 'Social'],
+          datasets: [{
+            label: 'Traffic Sources',
+            data: [40, 30, 30],
+            backgroundColor: ['#60a5fa', '#34d399', '#fbbf24'],
+          }]
+        },
+      });
     },
-
-    async handleEditProduct(id) {
-      try {
-        await this.fetchProductById(id);
-        this.editProduct = { ...this.selectedProduct }; // Initialize edit form with selected product data
-        this.editMode = true;
-      } catch (error) {
-        console.error('Failed to fetch product:', error);
-      }
-    },
-
-    async handleUpdateProduct() {
-      try {
-        await this.updateProduct(this.editProduct);
-        this.editProduct = null;
-        this.editMode = false;
-      } catch (error) {
-        console.error('Failed to update product:', error);
-      }
-    },
-
-    async handleDeleteProduct(id) {
-      try {
-        await this.deleteProduct(id);
-      } catch (error) {
-        console.error('Failed to delete product:', error);
-      }
-    },
-
-    cancelEdit() {
-      this.editProduct = null;
-      this.editMode = false;
-    },
-
-    handleLogout() {
-      try {
-        // Remove tokens from local storage
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToken');
-        
-        // Clear Vuex store
-        this.$store.commit('auth/clearUser');
-        this.$store.commit('auth/clearTokens');
-        
-        // Redirect to login page
-        this.$router.push('/login');
-      } catch (error) {
-        console.error('Logout failed:', error.message); // Log the error message
-        alert('Logout failed. Please try again.'); // Notify user of the error
-      }
-    }
   },
-  created() {
-    this.fetchProducts();
-  }
 };
 </script>
 
 <style scoped>
 .admin-dashboard {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100vw;
+  /* Full screen width */
+  height: 100vh;
+  /* Full screen height */
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #1f2937;
+  /* Dark background for modern look */
+  color: #f9f9f9;
+  /* Lighter text color for contrast */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
 }
-
+.admin-dashboard-header {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  padding: 10px; /* Add padding */
+  margin: 10px;
+  background-color: #2a2e37; /* Dark background */
+  border-bottom: 2px solid #60a5fa; /* Light blue border at the bottom */
+}
 .title {
-  font-size: 2rem;
-  color: royalblue;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-size: 2.5rem; /* Larger font for the title */
+  color: #60a5fa; /* Light blue color */
+  font-weight: 700; /* Bold text */
+  margin: 0; /* Remove margin */
+}
+.float-right {
+  margin-left: auto; /* Float button to the right */
 }
 
 .message {
-  color: rgba(88, 87, 87, 0.822);
-  font-size: 14px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  color: rgba(229, 231, 235, 0.9);
+  /* Light gray text */
+  margin-bottom: 30px;
   text-align: center;
 }
 
-button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
 button.logout {
-  background-color: #e53e3e;
+  background-color: #ef4444;
+  /* Modern red */
   color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  /* Rounded button */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto 30px auto;
+  /* Centered button */
 }
 
 button.logout:hover {
-  background-color: #c53030;
+  background-color: #dc2626;
+  /* Darker red on hover */
 }
 
-button.submit {
-  background-color: royalblue;
-  color: white;
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* Flexible grid layout */
+  gap: 30px;
 }
 
-button.submit:hover {
-  background-color: rgb(56, 90, 194);
+/* Statistics Section */
+.stats {
+  grid-column: span 2;
 }
 
-button.cancel {
-  background-color: #f56565;
-  color: white;
-}
-
-button.cancel:hover {
-  background-color: #e53e3e;
-}
-
-.product-management {
-  margin-top: 20px;
-}
-
-.product-management .form {
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.form label {
-  position: relative;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.form label .input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-}
-
-.form label .input + span {
-  position: absolute;
-  left: 10px;
-  top: 15px;
-  color: grey;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
-}
-
-.form label .input:placeholder-shown + span {
-  top: 15px;
-  font-size: 0.9em;
-}
-
-.form label .input:focus + span,
-.form label .input:valid + span {
-  top: 30px;
-  font-size: 0.7em;
-  font-weight: 600;
-}
-
-.product-list {
+.stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Flexible columns for tile view */
   gap: 20px;
+  /* Gap between cards */
   margin-top: 20px;
-  max-height: 400px;
-  overflow-y: auto;
+  /* Add some space above */
 }
 
-.product-card {
-  background-color: #ffffff;
+.stat-card {
+  background-color: #374151;
+  /* Dark card background */
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  /* Soft shadow */
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.product-card h3 {
-  font-size: 1.25rem;
-  color: royalblue;
-  margin-bottom: 10px;
+.stat-card:hover {
+  transform: translateY(-5px);
+  /* Slight lift on hover */
 }
 
-.product-card p {
-  color: rgba(88, 87, 87, 0.822);
-  margin-bottom: 8px;
+.stat-card h3 {
+  color: #60a5fa;
+  /* Light blue for headers */
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
-.product-card button {
-  align-self: flex-start;
-  margin-top: 10px;
-  padding: 8px 16px;
+.stat-card p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f9f9f9;
 }
 
-.edit-button {
-  background-color: #48bb78;
-  color: white;
+/* Circle Chart for Actions Needed */
+.circle-chart {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
 }
 
-.edit-button:hover {
-  background-color: #38a169;
+.circular-chart {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
 }
 
-.delete-button {
-  background-color: #f56565;
-  color: white;
+.circle-bg {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 3.8;
 }
 
-.delete-button:hover {
-  background-color: #e53e3e;
+.circle {
+  fill: none;
+  stroke: #34d399;
+  /* Green for progress */
+  stroke-width: 4;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
 }
 
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
-.edit-product {
-  position: fixed;
+.actions-card p {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
-  width: 80%;
-  max-width: 500px;
+  font-size: 1.2rem;
+  color: #34d399;
+  /* Green text inside circle */
+}
+
+/* Quick Links Section */
+.quick-links {
+  grid-column: span 2;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 15px;
+  cursor: pointer;
+  color: #60a5fa;
+  /* Modern blue */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.quick-links li:hover {
+  text-decoration: underline;
+}
+
+/* Task Management Section */
+.tasks {
+  grid-column: span 2;
+}
+
+.tasks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tasks li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.tasks li .completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Utility for full-screen layout */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  /* Modern font */
+  background-color: #1f2937;
+  /* Match background */
+  color: white;
+}
+
+
+/* From Uiverse.io by reshades */
+.button {
+  background-color: #ffffff00;
+  color: #fff;
+  width: 8.5em;
+  height: 2.9em;
+  border: #3654ff 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+}
+
+.button:hover {
+  background-color: #3654ff;
+  cursor: pointer;
+}
+
+.button svg {
+  width: 1.6em;
+  margin: -0.2em 0.8em 1em;
+  position: absolute;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.button:hover svg {
+  transform: translateX(5px);
+}
+
+.text {
+  margin: 0 1.5em
 }
 </style>

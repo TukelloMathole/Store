@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l2m4VZTg43M=",
+  "dgSpecHash": "JpXQ68gh1ac=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\StoreApp.csproj",
+  "projectFilePath": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\StoreApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tukel\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\tukel\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",

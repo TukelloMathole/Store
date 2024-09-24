@@ -1,15 +1,21 @@
 <template>
   <div id="app">
     <main>
+      <Navbar />
       <router-view></router-view> <!-- This renders the current route's component -->
     </main>
   </div>
 </template>
 
 <script>
+import Navbar from './components/NavBar.vue';
+
 export default {
-  name: 'App'
-}
+  name: 'App',
+  components: {
+    Navbar,
+  },
+};
 </script>
 
 <style>
@@ -24,7 +30,7 @@ export default {
 
 /* Main Content */
 main {
-  padding: 20px;
+  padding: 0;
 }
 
 /* Responsive Design */

@@ -20,6 +20,7 @@
 
 <script>
 import AuthService from '@/services/AuthService';
+import { mapMutations } from 'vuex';
 
 export default {
   name: 'UserLogin',
@@ -32,16 +33,18 @@ export default {
     };
   },
   methods: {
+    ...mapMutations('auth', ['setTokens', 'setUserRole']), // Correct mutation names here
     async handleLogin() {
       this.loading = true;
       this.error = '';
       try {
         const response = await AuthService.login({ email: this.email, password: this.password });
-        const { role, token } = response.data;
-
-        localStorage.setItem('token', token);
-        localStorage.setItem('role', role);
-
+        const { accessToken, refreshToken, role } = response.data;
+        
+        // Store tokens and role in Vuex
+        this.setTokens({ accessToken, refreshToken });
+        this.setUserRole(role); // Use the correct mutation name
+        // Redirect based on user role
         if (role === 'Admin') {
           this.$router.push({ name: 'AdminDashboard' });
         } else if (role === 'User') {
@@ -171,3 +174,4 @@ export default {
   text-decoration: underline royalblue;
 }
 </style>
+
