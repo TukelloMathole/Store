@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <main>
+      <CookieConsent />
       <Navbar />
       <router-view></router-view> <!-- This renders the current route's component -->
     </main>
@@ -9,11 +10,13 @@
 
 <script>
 import Navbar from './components/NavBar.vue';
+import CookieConsent from './components/CookieConsent.vue';
 
 export default {
   name: 'App',
   components: {
     Navbar,
+    CookieConsent
   },
 };
 </script>
