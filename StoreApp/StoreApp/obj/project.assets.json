@@ -4552,9 +4552,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\StoreApp.csproj",
-      "projectName": "StoreApp",
-      "projectPath": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\StoreApp.csproj",
+      "projectUniqueName": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\UserService.csproj",
+      "projectName": "UserService",
+      "projectPath": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\UserService.csproj",
       "packagesPath": "C:\\Users\\tukel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\obj\\",
       "projectStyle": "PackageReference",

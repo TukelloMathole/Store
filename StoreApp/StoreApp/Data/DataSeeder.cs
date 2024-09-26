@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
-using StoreApp.Models;
+using UserService.Models;
 
-namespace StoreApp.Data
+namespace UserService.Data
 {
     public static class DataSeeder
     {

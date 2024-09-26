@@ -1052,263 +1052,839 @@ FROM `Products` AS `p`" (0723d8ff)
 2024-09-17T07:04:23.1544379+02:00 0HN6MQN4T8889:0000004B [INF] Executed action "UserProductsController.GetProducts (StoreApp)" in 23.3505ms (afa2e885)
 2024-09-17T07:04:23.1544669+02:00 0HN6MQN4T8889:0000004B [INF] Executed endpoint '"UserProductsController.GetProducts (StoreApp)"' (99874f2b)
 2024-09-17T07:04:23.1545767+02:00 0HN6MQN4T8889:0000004B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/UserProducts""" - 200 null "application/json; charset=utf-8" 25.5225ms (74253ad3)
-2024-09-17T09:14:37.8346502+02:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE DATABASE `ProductManagementDB`;" (0723d8ff)
-2024-09-17T09:14:38.0146474+02:00  [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `__EFMigrationsHistory` (
-    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
-    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
-    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.0496384+02:00  [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='ProductManagementDB' AND TABLE_NAME='__EFMigrationsHistory';" (0723d8ff)
-2024-09-17T09:14:38.0566461+02:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""SELECT `MigrationId`, `ProductVersion`
-FROM `__EFMigrationsHistory`
-ORDER BY `MigrationId`;" (0723d8ff)
-2024-09-17T09:14:38.0795002+02:00  [INF] Applying migration '"20240917050008_InitialCreate"'. (0e2ac64d)
-2024-09-17T09:14:38.1603434+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""ALTER DATABASE CHARACTER SET utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.1787785+02:00  [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `AspNetRoles` (
-    `Id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `Name` varchar(256) CHARACTER SET utf8mb4 NULL,
-    `NormalizedName` varchar(256) CHARACTER SET utf8mb4 NULL,
-    `ConcurrencyStamp` longtext CHARACTER SET utf8mb4 NULL,
-    CONSTRAINT `PK_AspNetRoles` PRIMARY KEY (`Id`)
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.1958892+02:00  [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `AspNetUsers` (
-    `Id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `UserName` varchar(256) CHARACTER SET utf8mb4 NULL,
-    `NormalizedUserName` varchar(256) CHARACTER SET utf8mb4 NULL,
-    `Email` varchar(256) CHARACTER SET utf8mb4 NULL,
-    `NormalizedEmail` varchar(256) CHARACTER SET utf8mb4 NULL,
-    `EmailConfirmed` tinyint(1) NOT NULL,
-    `PasswordHash` longtext CHARACTER SET utf8mb4 NULL,
-    `SecurityStamp` longtext CHARACTER SET utf8mb4 NULL,
-    `ConcurrencyStamp` longtext CHARACTER SET utf8mb4 NULL,
-    `PhoneNumber` longtext CHARACTER SET utf8mb4 NULL,
-    `PhoneNumberConfirmed` tinyint(1) NOT NULL,
-    `TwoFactorEnabled` tinyint(1) NOT NULL,
-    `LockoutEnd` datetime(6) NULL,
-    `LockoutEnabled` tinyint(1) NOT NULL,
-    `AccessFailedCount` int NOT NULL,
-    CONSTRAINT `PK_AspNetUsers` PRIMARY KEY (`Id`)
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.2114988+02:00  [INF] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `Products` (
-    `Id` int NOT NULL AUTO_INCREMENT,
-    `Name` longtext CHARACTER SET utf8mb4 NOT NULL,
-    `Description` longtext CHARACTER SET utf8mb4 NOT NULL,
-    `Price` decimal(65,30) NOT NULL,
-    `Stock` int NOT NULL,
-    CONSTRAINT `PK_Products` PRIMARY KEY (`Id`)
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.2558385+02:00  [INF] Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `AspNetRoleClaims` (
-    `Id` int NOT NULL AUTO_INCREMENT,
-    `RoleId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `ClaimType` longtext CHARACTER SET utf8mb4 NULL,
-    `ClaimValue` longtext CHARACTER SET utf8mb4 NULL,
-    CONSTRAINT `PK_AspNetRoleClaims` PRIMARY KEY (`Id`),
-    CONSTRAINT `FK_AspNetRoleClaims_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `AspNetRoles` (`Id`) ON DELETE CASCADE
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.2923425+02:00  [INF] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `AspNetUserClaims` (
-    `Id` int NOT NULL AUTO_INCREMENT,
-    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `ClaimType` longtext CHARACTER SET utf8mb4 NULL,
-    `ClaimValue` longtext CHARACTER SET utf8mb4 NULL,
-    CONSTRAINT `PK_AspNetUserClaims` PRIMARY KEY (`Id`),
-    CONSTRAINT `FK_AspNetUserClaims_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.3344801+02:00  [INF] Executed DbCommand ("42"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `AspNetUserLogins` (
-    `LoginProvider` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `ProviderKey` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `ProviderDisplayName` longtext CHARACTER SET utf8mb4 NULL,
-    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    CONSTRAINT `PK_AspNetUserLogins` PRIMARY KEY (`LoginProvider`, `ProviderKey`),
-    CONSTRAINT `FK_AspNetUserLogins_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.3837789+02:00  [INF] Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `AspNetUserRoles` (
-    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `RoleId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    CONSTRAINT `PK_AspNetUserRoles` PRIMARY KEY (`UserId`, `RoleId`),
-    CONSTRAINT `FK_AspNetUserRoles_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `AspNetRoles` (`Id`) ON DELETE CASCADE,
-    CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.4048802+02:00  [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `AspNetUserTokens` (
-    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `LoginProvider` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `Name` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `Value` longtext CHARACTER SET utf8mb4 NULL,
-    CONSTRAINT `PK_AspNetUserTokens` PRIMARY KEY (`UserId`, `LoginProvider`, `Name`),
-    CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.4503728+02:00  [INF] Executed DbCommand ("45"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE TABLE `RefreshTokens` (
-    `Id` int NOT NULL AUTO_INCREMENT,
-    `Token` longtext CHARACTER SET utf8mb4 NOT NULL,
-    `Expiration` datetime(6) NOT NULL,
-    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    `IsRevoked` tinyint(1) NOT NULL,
-    CONSTRAINT `PK_RefreshTokens` PRIMARY KEY (`Id`),
-    CONSTRAINT `FK_RefreshTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
-) CHARACTER SET=utf8mb4;" (0723d8ff)
-2024-09-17T09:14:38.4891995+02:00  [INF] Executed DbCommand ("39"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE INDEX `IX_AspNetRoleClaims_RoleId` ON `AspNetRoleClaims` (`RoleId`);" (0723d8ff)
-2024-09-17T09:14:38.5311818+02:00  [INF] Executed DbCommand ("42"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE UNIQUE INDEX `RoleNameIndex` ON `AspNetRoles` (`NormalizedName`);" (0723d8ff)
-2024-09-17T09:14:38.5580550+02:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE INDEX `IX_AspNetUserClaims_UserId` ON `AspNetUserClaims` (`UserId`);" (0723d8ff)
-2024-09-17T09:14:38.6165927+02:00  [INF] Executed DbCommand ("58"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE INDEX `IX_AspNetUserLogins_UserId` ON `AspNetUserLogins` (`UserId`);" (0723d8ff)
-2024-09-17T09:14:38.6366843+02:00  [INF] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE INDEX `IX_AspNetUserRoles_RoleId` ON `AspNetUserRoles` (`RoleId`);" (0723d8ff)
-2024-09-17T09:14:38.6890160+02:00  [INF] Executed DbCommand ("52"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE INDEX `EmailIndex` ON `AspNetUsers` (`NormalizedEmail`);" (0723d8ff)
-2024-09-17T09:14:38.7492870+02:00  [INF] Executed DbCommand ("60"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE UNIQUE INDEX `UserNameIndex` ON `AspNetUsers` (`NormalizedUserName`);" (0723d8ff)
-2024-09-17T09:14:38.7697904+02:00  [INF] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""CREATE INDEX `IX_RefreshTokens_UserId` ON `RefreshTokens` (`UserId`);" (0723d8ff)
-2024-09-17T09:14:38.7712601+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
-VALUES ('20240917050008_InitialCreate', '8.0.8');" (0723d8ff)
-2024-09-17T09:14:38.7719077+02:00  [INF] Applying migration '"20240917071415_initialMigrate"'. (0e2ac64d)
-2024-09-17T09:14:38.7940754+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
-""INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
-VALUES ('20240917071415_initialMigrate', '8.0.8');" (0723d8ff)
-2024-09-17T09:18:16.2767751+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
-2024-09-17T09:18:17.4009151+02:00  [INF] Executed DbCommand ("47"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T09:22:16.7345904+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-17T09:22:18.5810667+02:00  [INF] Executed DbCommand ("64"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
 FROM `AspNetRoles` AS `a`
 WHERE `a`.`NormalizedName` = @__normalizedName_0
 LIMIT 1" (0723d8ff)
-2024-09-17T09:18:17.4389514+02:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T09:22:18.7050261+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
 FROM `AspNetRoles` AS `a`
 WHERE `a`.`NormalizedName` = @__normalizedName_0
 LIMIT 1" (0723d8ff)
-2024-09-17T09:18:17.5987882+02:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
-""SET AUTOCOMMIT = 1;
-INSERT INTO `AspNetRoles` (`Id`, `ConcurrencyStamp`, `Name`, `NormalizedName`)
-VALUES (@p0, @p1, @p2, @p3);" (0723d8ff)
-2024-09-17T09:18:17.6095695+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
-""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
-FROM `AspNetRoles` AS `a`
-WHERE `a`.`NormalizedName` = @__normalizedName_0
-LIMIT 1" (0723d8ff)
-2024-09-17T09:18:17.6108358+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
-""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
-FROM `AspNetRoles` AS `a`
-WHERE `a`.`NormalizedName` = @__normalizedName_0
-LIMIT 1" (0723d8ff)
-2024-09-17T09:18:17.6156348+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
-""SET AUTOCOMMIT = 1;
-INSERT INTO `AspNetRoles` (`Id`, `ConcurrencyStamp`, `Name`, `NormalizedName`)
-VALUES (@p0, @p1, @p2, @p3);" (0723d8ff)
-2024-09-17T09:18:17.6269097+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T09:22:18.7287583+02:00  [INF] Executed DbCommand ("8"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
 FROM `AspNetUsers` AS `a`
 WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
 LIMIT 2" (0723d8ff)
-2024-09-17T09:18:17.7427750+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T09:22:18.7803151+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T09:22:19.0101730+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-17T09:22:19.0102694+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-17T09:22:19.0147530+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-17T09:22:19.0153481+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-17T09:22:19.0154082+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-17T09:22:20.2850445+02:00 0HN6MT5RI21LO:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-17T09:22:20.9368282+02:00 0HN6MT5RI21LO:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 665.3472ms (74253ad3)
+2024-09-17T09:22:20.9391775+02:00 0HN6MT5RI21LO:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-17T09:22:20.9415143+02:00 0HN6MT5RI21LO:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-17T09:22:20.9416071+02:00 0HN6MT5RI21LO:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-17T09:22:20.9849157+02:00 0HN6MT5RI21LO:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 47.648ms (74253ad3)
+2024-09-17T09:22:21.0179396+02:00 0HN6MT5RI21LO:00000013 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-17T09:22:21.0181714+02:00 0HN6MT5RI21LO:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 76.706ms (74253ad3)
+2024-09-17T09:22:21.2252041+02:00 0HN6MT5RI21LO:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-17T09:22:21.2318345+02:00 0HN6MT5RI21LO:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-17T09:22:21.2319573+02:00 0HN6MT5RI21LO:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 24.7862ms (74253ad3)
+2024-09-17T09:22:21.2356427+02:00 0HN6MT5RI21LO:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 294.0128ms (74253ad3)
+2024-09-17T09:22:21.3778955+02:00 0HN6MT5RI21LO:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-17T09:22:21.6851280+02:00 0HN6MT5RI21LO:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 307.2578ms (74253ad3)
+2024-09-17T09:22:52.6390714+02:00 0HN6MT5RI21LP:0000000F [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - null null (d509f86a)
+2024-09-17T09:22:52.6475080+02:00 0HN6MT5RI21LP:0000000F [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T09:22:52.6491379+02:00 0HN6MT5RI21LP:0000000F [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - 204 null null 10.0877ms (74253ad3)
+2024-09-17T09:22:52.6529888+02:00 0HN6MT5RI21LP:00000011 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - "application/json" 52 (d509f86a)
+2024-09-17T09:22:52.6543960+02:00 0HN6MT5RI21LP:00000011 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T09:22:52.7420500+02:00 0HN6MT5RI21LP:00000011 [INF] Executing endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (500cc934)
+2024-09-17T09:22:52.7684632+02:00 0HN6MT5RI21LP:00000011 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StoreApp.DTOs.LoginDto)" on controller "StoreApp.Controllers.AccountController" ("StoreApp"). (122b2fdf)
+2024-09-17T09:22:52.8609261+02:00 0HN6MT5RI21LP:00000011 [INF] Executing action method "StoreApp.Controllers.AccountController.Login (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T09:22:52.9173140+02:00 0HN6MT5RI21LP:00000011 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T09:22:53.1025936+02:00 0HN6MT5RI21LP:00000011 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a0`.`Name`
+FROM `AspNetUserRoles` AS `a`
+INNER JOIN `AspNetRoles` AS `a0` ON `a`.`RoleId` = `a0`.`Id`
+WHERE `a`.`UserId` = @__userId_0" (0723d8ff)
+2024-09-17T09:22:53.3270983+02:00 0HN6MT5RI21LP:00000011 [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = DateTime), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `RefreshTokens` (`Expiration`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T09:22:53.3626693+02:00 0HN6MT5RI21LP:00000011 [INF] User logged in successfully: "admin@example.com" (c7005f60)
+2024-09-17T09:22:53.3674969+02:00 0HN6MT5RI21LP:00000011 [INF] Executed action method "StoreApp.Controllers.AccountController.Login (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 502.9086ms. (50a9e262)
+2024-09-17T09:22:53.3723528+02:00 0HN6MT5RI21LP:00000011 [INF] Executing "OkObjectResult", writing value of type '"StoreApp.DTOs.LoginResponseDto"'. (605b4265)
+2024-09-17T09:22:53.3816371+02:00 0HN6MT5RI21LP:00000011 [INF] Executed action "StoreApp.Controllers.AccountController.Login (StoreApp)" in 608.6442ms (afa2e885)
+2024-09-17T09:22:53.3824001+02:00 0HN6MT5RI21LP:00000011 [INF] Executed endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (99874f2b)
+2024-09-17T09:22:53.4031501+02:00 0HN6MT5RI21LP:00000011 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - 200 null "application/json; charset=utf-8" 750.175ms (74253ad3)
+2024-09-17T09:22:53.4384352+02:00 0HN6MT5RI21LP:00000013 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T09:22:53.4396981+02:00 0HN6MT5RI21LP:00000013 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T09:22:53.4398928+02:00 0HN6MT5RI21LP:00000013 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 1.6473ms (74253ad3)
+2024-09-17T09:22:53.4459998+02:00 0HN6MT5RI21LP:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T09:22:53.4465625+02:00 0HN6MT5RI21LP:00000015 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T09:22:53.5018910+02:00 0HN6MT5RI21LP:00000015 [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T09:22:53.5080279+02:00 0HN6MT5RI21LP:00000015 [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T09:22:53.5377020+02:00 0HN6MT5RI21LP:00000015 [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T09:22:53.5394817+02:00 0HN6MT5RI21LP:00000015 [INF] Getting all products. (c1411ab4)
+2024-09-17T09:22:53.5709642+02:00 0HN6MT5RI21LP:00000015 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T09:22:53.5715897+02:00 0HN6MT5RI21LP:00000015 [INF] Successfully retrieved 0 products. (173ea43c)
+2024-09-17T09:22:53.5726048+02:00 0HN6MT5RI21LP:00000015 [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 34.7952ms. (50a9e262)
+2024-09-17T09:22:53.5731734+02:00 0HN6MT5RI21LP:00000015 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T09:22:53.5789671+02:00 0HN6MT5RI21LP:00000015 [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 70.8136ms (afa2e885)
+2024-09-17T09:22:53.5790481+02:00 0HN6MT5RI21LP:00000015 [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T09:22:53.5794440+02:00 0HN6MT5RI21LP:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 133.5368ms (74253ad3)
+2024-09-17T09:23:14.2566191+02:00 0HN6MT5RI21LP:00000017 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T09:23:14.2569102+02:00 0HN6MT5RI21LP:00000017 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T09:23:14.2570587+02:00 0HN6MT5RI21LP:00000017 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 0.6938ms (74253ad3)
+2024-09-17T09:23:14.2609465+02:00 0HN6MT5RI21LP:00000019 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - "application/json" 61 (d509f86a)
+2024-09-17T09:23:14.2617936+02:00 0HN6MT5RI21LP:00000019 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T09:23:14.2659402+02:00 0HN6MT5RI21LP:00000019 [INF] Executing endpoint '"AdminProductsController.PostProduct (StoreApp)"' (500cc934)
+2024-09-17T09:23:14.2688520+02:00 0HN6MT5RI21LP:00000019 [INF] Route matched with "{action = \"PostProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoreApp.Models.Product]] PostProduct(StoreApp.DTOs.ProductDto)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T09:23:14.2971335+02:00 0HN6MT5RI21LP:00000019 [INF] Executing action method "AdminProductsController.PostProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T09:23:14.2980099+02:00 0HN6MT5RI21LP:00000019 [INF] Creating new product. (365c6384)
+2024-09-17T09:23:14.3375388+02:00 0HN6MT5RI21LP:00000019 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `Products` (`Description`, `Name`, `Price`, `Stock`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T09:23:14.3424165+02:00 0HN6MT5RI21LP:00000019 [INF] Successfully created product with ID: 1 (9ba22a90)
+2024-09-17T09:23:14.3433447+02:00 0HN6MT5RI21LP:00000019 [INF] Executed action method "AdminProductsController.PostProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 46.145ms. (50a9e262)
+2024-09-17T09:23:14.3435370+02:00 0HN6MT5RI21LP:00000019 [INF] Executing "CreatedAtActionResult", writing value of type '"StoreApp.Models.Product"'. (605b4265)
+2024-09-17T09:23:14.3639774+02:00 0HN6MT5RI21LP:00000019 [INF] Executed action "AdminProductsController.PostProduct (StoreApp)" in 95.0722ms (afa2e885)
+2024-09-17T09:23:14.3640304+02:00 0HN6MT5RI21LP:00000019 [INF] Executed endpoint '"AdminProductsController.PostProduct (StoreApp)"' (99874f2b)
+2024-09-17T09:23:14.3641901+02:00 0HN6MT5RI21LP:00000019 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - 201 null "application/json; charset=utf-8" 103.3152ms (74253ad3)
+2024-09-17T09:23:14.3704261+02:00 0HN6MT5RI21LP:0000001B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T09:23:14.3706154+02:00 0HN6MT5RI21LP:0000001B [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T09:23:14.3728204+02:00 0HN6MT5RI21LP:0000001B [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T09:23:14.3730105+02:00 0HN6MT5RI21LP:0000001B [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T09:23:14.3975003+02:00 0HN6MT5RI21LP:0000001B [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T09:23:14.3976265+02:00 0HN6MT5RI21LP:0000001B [INF] Getting all products. (c1411ab4)
+2024-09-17T09:23:14.4013211+02:00 0HN6MT5RI21LP:0000001B [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T09:23:14.4029792+02:00 0HN6MT5RI21LP:0000001B [INF] Successfully retrieved 1 products. (173ea43c)
+2024-09-17T09:23:14.4031709+02:00 0HN6MT5RI21LP:0000001B [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 5.6132ms. (50a9e262)
+2024-09-17T09:23:14.4032724+02:00 0HN6MT5RI21LP:0000001B [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T09:23:14.4036571+02:00 0HN6MT5RI21LP:0000001B [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 30.6047ms (afa2e885)
+2024-09-17T09:23:14.4036994+02:00 0HN6MT5RI21LP:0000001B [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T09:23:14.4038392+02:00 0HN6MT5RI21LP:0000001B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 33.4642ms (74253ad3)
+2024-09-17T10:18:01.7747408+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-17T10:18:04.4744574+02:00  [INF] Executed DbCommand ("141"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:18:04.7938884+02:00  [INF] Executed DbCommand ("56"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:18:04.8282891+02:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:18:04.9231461+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:18:05.2203503+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-17T10:18:05.2204400+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-17T10:18:05.2250758+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-17T10:18:05.2257144+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-17T10:18:05.2258186+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-17T10:18:06.5768714+02:00 0HN6MU50O8UM3:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-17T10:18:07.3384561+02:00 0HN6MU50O8UM3:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 775.0037ms (74253ad3)
+2024-09-17T10:18:07.4218462+02:00 0HN6MU50O8UM3:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-17T10:18:07.4730812+02:00 0HN6MU50O8UM3:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-17T10:18:07.4768098+02:00 0HN6MU50O8UM3:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 55.0746ms (74253ad3)
+2024-09-17T10:18:07.6065292+02:00 0HN6MU50O8UM3:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 133.42ms (74253ad3)
+2024-09-17T10:18:07.6227172+02:00 0HN6MU50O8UM3:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-17T10:18:07.6575177+02:00 0HN6MU50O8UM3:00000015 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-17T10:18:07.6577376+02:00 0HN6MU50O8UM3:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 35.0936ms (74253ad3)
+2024-09-17T10:18:07.7154019+02:00 0HN6MU50O8UM3:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-17T10:18:08.1924603+02:00 0HN6MU50O8UM3:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 477.0782ms (74253ad3)
+2024-09-17T10:18:56.8598797+02:00 0HN6MU50O8UM3:00000019 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - "application/json" 61 (d509f86a)
+2024-09-17T10:18:56.8732546+02:00 0HN6MU50O8UM3:00000019 [INF] CORS policy execution failed. (09b6f179)
+2024-09-17T10:18:56.8736497+02:00 0HN6MU50O8UM3:00000019 [INF] Request origin "https://localhost:7084" does not have permission to access the resource. (a03d560b)
+2024-09-17T10:18:57.0943184+02:00 0HN6MU50O8UM3:00000019 [INF] Executing endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (500cc934)
+2024-09-17T10:18:57.1781029+02:00 0HN6MU50O8UM3:00000019 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StoreApp.DTOs.LoginDto)" on controller "StoreApp.Controllers.AccountController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:18:57.5488298+02:00 0HN6MU50O8UM3:00000019 [INF] Executing action method "StoreApp.Controllers.AccountController.Login (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:18:58.0224947+02:00 0HN6MU50O8UM3:00000019 [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:18:58.6804660+02:00 0HN6MU50O8UM3:00000019 [INF] Executed DbCommand ("5"ms) [Parameters=["@__userId_0='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a0`.`Name`
+FROM `AspNetUserRoles` AS `a`
+INNER JOIN `AspNetRoles` AS `a0` ON `a`.`RoleId` = `a0`.`Id`
+WHERE `a`.`UserId` = @__userId_0" (0723d8ff)
+2024-09-17T10:18:59.3938803+02:00 0HN6MU50O8UM3:00000019 [INF] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (DbType = DateTime), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `RefreshTokens` (`Expiration`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:18:59.4702130+02:00 0HN6MU50O8UM3:00000019 [INF] User logged in successfully: "admin@example.com" (c7005f60)
+2024-09-17T10:18:59.4779822+02:00 0HN6MU50O8UM3:00000019 [INF] Executed action method "StoreApp.Controllers.AccountController.Login (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1923.1669ms. (50a9e262)
+2024-09-17T10:18:59.4891567+02:00 0HN6MU50O8UM3:00000019 [INF] Executing "OkObjectResult", writing value of type '"StoreApp.DTOs.LoginResponseDto"'. (605b4265)
+2024-09-17T10:18:59.5081291+02:00 0HN6MU50O8UM3:00000019 [INF] Executed action "StoreApp.Controllers.AccountController.Login (StoreApp)" in 2317.9266ms (afa2e885)
+2024-09-17T10:18:59.5088456+02:00 0HN6MU50O8UM3:00000019 [INF] Executed endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (99874f2b)
+2024-09-17T10:18:59.5235580+02:00 0HN6MU50O8UM3:00000019 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - 200 null "application/json; charset=utf-8" 2663.8484ms (74253ad3)
+2024-09-17T10:19:45.7667092+02:00 0HN6MU50O8UM3:0000001B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:19:45.8037848+02:00 0HN6MU50O8UM3:0000001B [INF] Authorization failed. "These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)" (92d7f7d3)
+2024-09-17T10:19:45.8140040+02:00 0HN6MU50O8UM3:0000001B [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2024-09-17T10:19:45.8145432+02:00 0HN6MU50O8UM3:0000001B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 401 0 null 47.9261ms (74253ad3)
+2024-09-17T10:20:16.9043091+02:00 0HN6MU50O8UM3:0000001D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:20:16.9951143+02:00 0HN6MU50O8UM3:0000001D [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:20:17.0042439+02:00 0HN6MU50O8UM3:0000001D [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:20:17.0593406+02:00 0HN6MU50O8UM3:0000001D [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:20:17.0618328+02:00 0HN6MU50O8UM3:0000001D [INF] Getting all products. (c1411ab4)
+2024-09-17T10:20:17.1572564+02:00 0HN6MU50O8UM3:0000001D [INF] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:20:17.2106481+02:00 0HN6MU50O8UM3:0000001D [INF] Successfully retrieved 1 products. (173ea43c)
+2024-09-17T10:20:17.2124662+02:00 0HN6MU50O8UM3:0000001D [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 152.8814ms. (50a9e262)
+2024-09-17T10:20:17.2279353+02:00 0HN6MU50O8UM3:0000001D [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:20:17.2599919+02:00 0HN6MU50O8UM3:0000001D [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 255.5831ms (afa2e885)
+2024-09-17T10:20:17.2601876+02:00 0HN6MU50O8UM3:0000001D [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:20:17.2627980+02:00 0HN6MU50O8UM3:0000001D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 358.5985ms (74253ad3)
+2024-09-17T10:24:13.2851825+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-17T10:24:16.4318926+02:00  [INF] Executed DbCommand ("91"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:24:16.5698770+02:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:24:16.5935834+02:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:24:16.6962862+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:24:16.9750174+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-17T10:24:16.9751228+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-17T10:24:16.9822332+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-17T10:24:16.9833201+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-17T10:24:16.9835067+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-17T10:24:18.2943257+02:00 0HN6MU8FKFU6J:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-17T10:24:19.0947640+02:00 0HN6MU8FKFU6J:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-17T10:24:19.0953398+02:00 0HN6MU8FKFU6J:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 812.5758ms (74253ad3)
+2024-09-17T10:24:19.1405120+02:00 0HN6MU8FKFU6J:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-17T10:24:19.4075122+02:00 0HN6MU8FKFU6J:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-17T10:24:19.4307496+02:00 0HN6MU8FKFU6J:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-17T10:24:19.4313636+02:00 0HN6MU8FKFU6J:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 336.5938ms (74253ad3)
+2024-09-17T10:24:19.4583709+02:00 0HN6MU8FKFU6J:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 317.871ms (74253ad3)
+2024-09-17T10:24:19.5610989+02:00 0HN6MU8FKFU6J:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 153.6616ms (74253ad3)
+2024-09-17T10:24:19.5791842+02:00 0HN6MU8FKFU6J:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-17T10:24:19.5821912+02:00 0HN6MU8FKFU6J:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-17T10:24:19.5823057+02:00 0HN6MU8FKFU6J:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 3.2401ms (74253ad3)
+2024-09-17T10:24:19.6654222+02:00 0HN6MU8FKFU6J:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-17T10:24:20.6349402+02:00 0HN6MU8FKFU6J:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 969.5216ms (74253ad3)
+2024-09-17T10:26:00.4167582+02:00 0HN6MU8FKFU6K:0000000F [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:26:00.4297622+02:00 0HN6MU8FKFU6K:0000000F [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:26:00.4324316+02:00 0HN6MU8FKFU6K:0000000F [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 15.8153ms (74253ad3)
+2024-09-17T10:26:00.4377846+02:00 0HN6MU8FKFU6K:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:26:00.4391872+02:00 0HN6MU8FKFU6K:00000011 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:26:00.6229849+02:00 0HN6MU8FKFU6K:00000011 [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:26:00.6419106+02:00 0HN6MU8FKFU6K:00000011 [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:26:00.7219683+02:00 0HN6MU8FKFU6K:00000011 [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:26:00.7238366+02:00 0HN6MU8FKFU6K:00000011 [INF] Getting all products. (c1411ab4)
+2024-09-17T10:26:00.8208005+02:00 0HN6MU8FKFU6K:00000011 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:26:00.8431526+02:00 0HN6MU8FKFU6K:00000011 [INF] Successfully retrieved 1 products. (173ea43c)
+2024-09-17T10:26:00.8491980+02:00 0HN6MU8FKFU6K:00000011 [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 122.7029ms. (50a9e262)
+2024-09-17T10:26:00.8555284+02:00 0HN6MU8FKFU6K:00000011 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:26:00.8753655+02:00 0HN6MU8FKFU6K:00000011 [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 229.5804ms (afa2e885)
+2024-09-17T10:26:00.8760991+02:00 0HN6MU8FKFU6K:00000011 [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:26:00.8871984+02:00 0HN6MU8FKFU6K:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 449.1367ms (74253ad3)
+2024-09-17T10:27:02.5387068+02:00 0HN6MU8FKFU6K:00000013 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - null null (d509f86a)
+2024-09-17T10:27:02.5423642+02:00 0HN6MU8FKFU6K:00000013 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:02.5426223+02:00 0HN6MU8FKFU6K:00000013 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - 204 null null 4.1653ms (74253ad3)
+2024-09-17T10:27:02.5856613+02:00 0HN6MU8FKFU6K:00000015 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - "application/json" 52 (d509f86a)
+2024-09-17T10:27:02.5870255+02:00 0HN6MU8FKFU6K:00000015 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:02.5889050+02:00 0HN6MU8FKFU6K:00000015 [INF] Executing endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (500cc934)
+2024-09-17T10:27:02.6087733+02:00 0HN6MU8FKFU6K:00000015 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StoreApp.DTOs.LoginDto)" on controller "StoreApp.Controllers.AccountController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:27:02.7308246+02:00 0HN6MU8FKFU6K:00000015 [INF] Executing action method "StoreApp.Controllers.AccountController.Login (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:27:02.7591536+02:00 0HN6MU8FKFU6K:00000015 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:27:02.9723728+02:00 0HN6MU8FKFU6K:00000015 [INF] Executed DbCommand ("7"ms) [Parameters=["@__userId_0='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a0`.`Name`
+FROM `AspNetUserRoles` AS `a`
+INNER JOIN `AspNetRoles` AS `a0` ON `a`.`RoleId` = `a0`.`Id`
+WHERE `a`.`UserId` = @__userId_0" (0723d8ff)
+2024-09-17T10:27:03.2228017+02:00 0HN6MU8FKFU6K:00000015 [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = DateTime), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `RefreshTokens` (`Expiration`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:27:03.2624568+02:00 0HN6MU8FKFU6K:00000015 [INF] User logged in successfully: "admin@example.com" (c7005f60)
+2024-09-17T10:27:03.2639952+02:00 0HN6MU8FKFU6K:00000015 [INF] Executed action method "StoreApp.Controllers.AccountController.Login (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 533.001ms. (50a9e262)
+2024-09-17T10:27:03.2651541+02:00 0HN6MU8FKFU6K:00000015 [INF] Executing "OkObjectResult", writing value of type '"StoreApp.DTOs.LoginResponseDto"'. (605b4265)
+2024-09-17T10:27:03.2683051+02:00 0HN6MU8FKFU6K:00000015 [INF] Executed action "StoreApp.Controllers.AccountController.Login (StoreApp)" in 659.2409ms (afa2e885)
+2024-09-17T10:27:03.2689855+02:00 0HN6MU8FKFU6K:00000015 [INF] Executed endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (99874f2b)
+2024-09-17T10:27:03.2694156+02:00 0HN6MU8FKFU6K:00000015 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - 200 null "application/json; charset=utf-8" 683.8013ms (74253ad3)
+2024-09-17T10:27:03.3198991+02:00 0HN6MU8FKFU6K:00000017 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:27:03.3222425+02:00 0HN6MU8FKFU6K:00000017 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:03.3224050+02:00 0HN6MU8FKFU6K:00000017 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 2.5678ms (74253ad3)
+2024-09-17T10:27:03.3418393+02:00 0HN6MU8FKFU6K:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:27:03.3445183+02:00 0HN6MU8FKFU6K:00000019 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:03.3543890+02:00 0HN6MU8FKFU6K:00000019 [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:27:03.3545962+02:00 0HN6MU8FKFU6K:00000019 [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:27:03.4044490+02:00 0HN6MU8FKFU6K:00000019 [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:27:03.4045997+02:00 0HN6MU8FKFU6K:00000019 [INF] Getting all products. (c1411ab4)
+2024-09-17T10:27:03.4120984+02:00 0HN6MU8FKFU6K:00000019 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:27:03.4133512+02:00 0HN6MU8FKFU6K:00000019 [INF] Successfully retrieved 1 products. (173ea43c)
+2024-09-17T10:27:03.4135301+02:00 0HN6MU8FKFU6K:00000019 [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 9.0053ms. (50a9e262)
+2024-09-17T10:27:03.4136467+02:00 0HN6MU8FKFU6K:00000019 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:27:03.4138183+02:00 0HN6MU8FKFU6K:00000019 [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 59.1871ms (afa2e885)
+2024-09-17T10:27:03.4138821+02:00 0HN6MU8FKFU6K:00000019 [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:27:03.4140428+02:00 0HN6MU8FKFU6K:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 73.1168ms (74253ad3)
+2024-09-17T10:27:46.9370252+02:00 0HN6MU8FKFU6K:0000001B [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:27:46.9711595+02:00 0HN6MU8FKFU6K:0000001B [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:46.9716749+02:00 0HN6MU8FKFU6K:0000001B [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 38.1314ms (74253ad3)
+2024-09-17T10:27:46.9781534+02:00 0HN6MU8FKFU6K:0000001D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - "application/json" 60 (d509f86a)
+2024-09-17T10:27:46.9783693+02:00 0HN6MU8FKFU6K:0000001D [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:46.9918026+02:00 0HN6MU8FKFU6K:0000001D [INF] Executing endpoint '"AdminProductsController.PostProduct (StoreApp)"' (500cc934)
+2024-09-17T10:27:47.0040627+02:00 0HN6MU8FKFU6K:0000001D [INF] Route matched with "{action = \"PostProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoreApp.Models.Product]] PostProduct(StoreApp.DTOs.ProductDto)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:27:47.0442196+02:00 0HN6MU8FKFU6K:0000001D [INF] Executing action method "AdminProductsController.PostProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:27:47.0456833+02:00 0HN6MU8FKFU6K:0000001D [INF] Creating new product. (365c6384)
+2024-09-17T10:27:47.0766255+02:00 0HN6MU8FKFU6K:0000001D [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `Products` (`Description`, `Name`, `Price`, `Stock`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:27:47.0808969+02:00 0HN6MU8FKFU6K:0000001D [INF] Successfully created product with ID: 2 (9ba22a90)
+2024-09-17T10:27:47.0822241+02:00 0HN6MU8FKFU6K:0000001D [INF] Executed action method "AdminProductsController.PostProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 37.9424ms. (50a9e262)
+2024-09-17T10:27:47.0824126+02:00 0HN6MU8FKFU6K:0000001D [INF] Executing "CreatedAtActionResult", writing value of type '"StoreApp.Models.Product"'. (605b4265)
+2024-09-17T10:27:47.1132199+02:00 0HN6MU8FKFU6K:0000001D [INF] Executed action "AdminProductsController.PostProduct (StoreApp)" in 109.0899ms (afa2e885)
+2024-09-17T10:27:47.1132748+02:00 0HN6MU8FKFU6K:0000001D [INF] Executed endpoint '"AdminProductsController.PostProduct (StoreApp)"' (99874f2b)
+2024-09-17T10:27:47.1135186+02:00 0HN6MU8FKFU6K:0000001D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - 201 null "application/json; charset=utf-8" 135.3541ms (74253ad3)
+2024-09-17T10:27:47.1540663+02:00 0HN6MU8FKFU6K:0000001F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:27:47.1616127+02:00 0HN6MU8FKFU6K:0000001F [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:47.1655037+02:00 0HN6MU8FKFU6K:0000001F [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:27:47.1656197+02:00 0HN6MU8FKFU6K:0000001F [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:27:47.1969140+02:00 0HN6MU8FKFU6K:0000001F [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:27:47.1970092+02:00 0HN6MU8FKFU6K:0000001F [INF] Getting all products. (c1411ab4)
+2024-09-17T10:27:47.2037344+02:00 0HN6MU8FKFU6K:0000001F [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:27:47.2042045+02:00 0HN6MU8FKFU6K:0000001F [INF] Successfully retrieved 2 products. (173ea43c)
+2024-09-17T10:27:47.2042584+02:00 0HN6MU8FKFU6K:0000001F [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 7.2893ms. (50a9e262)
+2024-09-17T10:27:47.2085707+02:00 0HN6MU8FKFU6K:0000001F [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:27:47.2089261+02:00 0HN6MU8FKFU6K:0000001F [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 43.2614ms (afa2e885)
+2024-09-17T10:27:47.2090137+02:00 0HN6MU8FKFU6K:0000001F [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:27:47.2094041+02:00 0HN6MU8FKFU6K:0000001F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 55.4918ms (74253ad3)
+2024-09-17T10:27:54.2769570+02:00 0HN6MU8FKFU6K:00000021 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts/1""" - null null (d509f86a)
+2024-09-17T10:27:54.2771730+02:00 0HN6MU8FKFU6K:00000021 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:54.2773755+02:00 0HN6MU8FKFU6K:00000021 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts/1""" - 204 null null 0.4322ms (74253ad3)
+2024-09-17T10:27:54.2804829+02:00 0HN6MU8FKFU6K:00000023 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts/1""" - null null (d509f86a)
+2024-09-17T10:27:54.2807446+02:00 0HN6MU8FKFU6K:00000023 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:27:54.2811832+02:00 0HN6MU8FKFU6K:00000023 [INF] Executing endpoint '"AdminProductsController.GetProduct (StoreApp)"' (500cc934)
+2024-09-17T10:27:54.2877962+02:00 0HN6MU8FKFU6K:00000023 [INF] Route matched with "{action = \"GetProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoreApp.Models.Product]] GetProduct(Int32)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:27:54.3244855+02:00 0HN6MU8FKFU6K:00000023 [INF] Executing action method "AdminProductsController.GetProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:27:54.3258981+02:00 0HN6MU8FKFU6K:00000023 [INF] Getting product with ID: 1 (23e8d892)
+2024-09-17T10:27:54.3567890+02:00 0HN6MU8FKFU6K:00000023 [INF] Executed DbCommand ("6"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:27:54.3573235+02:00 0HN6MU8FKFU6K:00000023 [INF] Successfully retrieved product with ID: 1 (0bbc8674)
+2024-09-17T10:27:54.3573879+02:00 0HN6MU8FKFU6K:00000023 [INF] Executed action method "AdminProductsController.GetProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 32.8193ms. (50a9e262)
+2024-09-17T10:27:54.3575820+02:00 0HN6MU8FKFU6K:00000023 [INF] Executing "OkObjectResult", writing value of type '"StoreApp.Models.Product"'. (605b4265)
+2024-09-17T10:27:54.3577553+02:00 0HN6MU8FKFU6K:00000023 [INF] Executed action "AdminProductsController.GetProduct (StoreApp)" in 69.9246ms (afa2e885)
+2024-09-17T10:27:54.3577824+02:00 0HN6MU8FKFU6K:00000023 [INF] Executed endpoint '"AdminProductsController.GetProduct (StoreApp)"' (99874f2b)
+2024-09-17T10:27:54.3579113+02:00 0HN6MU8FKFU6K:00000023 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts/1""" - 200 null "application/json; charset=utf-8" 77.4863ms (74253ad3)
+2024-09-17T10:28:06.3066114+02:00 0HN6MU8FKFU6K:00000025 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts/1""" - null null (d509f86a)
+2024-09-17T10:28:06.3068089+02:00 0HN6MU8FKFU6K:00000025 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:06.3068970+02:00 0HN6MU8FKFU6K:00000025 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts/1""" - 204 null null 0.3463ms (74253ad3)
+2024-09-17T10:28:06.3127097+02:00 0HN6MU8FKFU6K:00000027 [INF] Request starting "HTTP/2" "PUT" "https"://"localhost:7084""""/api/AdminProducts/1""" - "application/json" 74 (d509f86a)
+2024-09-17T10:28:06.3129970+02:00 0HN6MU8FKFU6K:00000027 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:06.3156664+02:00 0HN6MU8FKFU6K:00000027 [INF] Executing endpoint '"AdminProductsController.PutProduct (StoreApp)"' (500cc934)
+2024-09-17T10:28:06.3224890+02:00 0HN6MU8FKFU6K:00000027 [INF] Route matched with "{action = \"PutProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutProduct(Int32, StoreApp.DTOs.ProductDto)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:28:06.3485615+02:00 0HN6MU8FKFU6K:00000027 [INF] Executing action method "AdminProductsController.PutProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:28:06.3497793+02:00 0HN6MU8FKFU6K:00000027 [INF] Updating product with ID: 1 (997d0024)
+2024-09-17T10:28:06.3571457+02:00 0HN6MU8FKFU6K:00000027 [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:28:06.3760601+02:00 0HN6MU8FKFU6K:00000027 [INF] Executed DbCommand ("9"ms) [Parameters=["@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET AUTOCOMMIT = 1;
+UPDATE `Products` SET `Description` = @p0, `Name` = @p1, `Price` = @p2, `Stock` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();" (0723d8ff)
+2024-09-17T10:28:06.3787444+02:00 0HN6MU8FKFU6K:00000027 [INF] Successfully updated product with ID: 1 (5444fb94)
+2024-09-17T10:28:06.3788895+02:00 0HN6MU8FKFU6K:00000027 [INF] Executed action method "AdminProductsController.PutProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.NoContentResult" in 30.2553ms. (50a9e262)
+2024-09-17T10:28:06.3818464+02:00 0HN6MU8FKFU6K:00000027 [INF] Executing StatusCodeResult, setting HTTP status code 204 (3fe03d2f)
+2024-09-17T10:28:06.3819270+02:00 0HN6MU8FKFU6K:00000027 [INF] Executed action "AdminProductsController.PutProduct (StoreApp)" in 59.4041ms (afa2e885)
+2024-09-17T10:28:06.3819558+02:00 0HN6MU8FKFU6K:00000027 [INF] Executed endpoint '"AdminProductsController.PutProduct (StoreApp)"' (99874f2b)
+2024-09-17T10:28:06.3821235+02:00 0HN6MU8FKFU6K:00000027 [INF] Request finished "HTTP/2" "PUT" "https"://"localhost:7084""""/api/AdminProducts/1""" - 204 null null 69.6334ms (74253ad3)
+2024-09-17T10:28:06.3929500+02:00 0HN6MU8FKFU6K:00000029 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:28:06.3930752+02:00 0HN6MU8FKFU6K:00000029 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:06.3931620+02:00 0HN6MU8FKFU6K:00000029 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 0.2791ms (74253ad3)
+2024-09-17T10:28:06.3960460+02:00 0HN6MU8FKFU6K:0000002B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:28:06.3963234+02:00 0HN6MU8FKFU6K:0000002B [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:06.3967317+02:00 0HN6MU8FKFU6K:0000002B [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:28:06.3968210+02:00 0HN6MU8FKFU6K:0000002B [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:28:06.4261310+02:00 0HN6MU8FKFU6K:0000002B [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:28:06.4261910+02:00 0HN6MU8FKFU6K:0000002B [INF] Getting all products. (c1411ab4)
+2024-09-17T10:28:06.4296418+02:00 0HN6MU8FKFU6K:0000002B [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:28:06.4300354+02:00 0HN6MU8FKFU6K:0000002B [INF] Successfully retrieved 2 products. (173ea43c)
+2024-09-17T10:28:06.4300869+02:00 0HN6MU8FKFU6K:0000002B [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3.9144ms. (50a9e262)
+2024-09-17T10:28:06.4301674+02:00 0HN6MU8FKFU6K:0000002B [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:28:06.4305606+02:00 0HN6MU8FKFU6K:0000002B [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 33.7188ms (afa2e885)
+2024-09-17T10:28:06.4306569+02:00 0HN6MU8FKFU6K:0000002B [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:28:06.4307912+02:00 0HN6MU8FKFU6K:0000002B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 34.8441ms (74253ad3)
+2024-09-17T10:28:13.7879226+02:00 0HN6MU8FKFU6K:0000002D [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts/1""" - null null (d509f86a)
+2024-09-17T10:28:13.7881272+02:00 0HN6MU8FKFU6K:0000002D [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:13.7885598+02:00 0HN6MU8FKFU6K:0000002D [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts/1""" - 204 null null 0.803ms (74253ad3)
+2024-09-17T10:28:13.7935027+02:00 0HN6MU8FKFU6K:0000002F [INF] Request starting "HTTP/2" "DELETE" "https"://"localhost:7084""""/api/AdminProducts/1""" - null null (d509f86a)
+2024-09-17T10:28:13.7937419+02:00 0HN6MU8FKFU6K:0000002F [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:13.7962134+02:00 0HN6MU8FKFU6K:0000002F [INF] Executing endpoint '"AdminProductsController.DeleteProduct (StoreApp)"' (500cc934)
+2024-09-17T10:28:13.8027199+02:00 0HN6MU8FKFU6K:0000002F [INF] Route matched with "{action = \"DeleteProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduct(Int32)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:28:13.8382357+02:00 0HN6MU8FKFU6K:0000002F [INF] Executing action method "AdminProductsController.DeleteProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:28:13.8393744+02:00 0HN6MU8FKFU6K:0000002F [INF] Deleting product with ID: 1 (db104515)
+2024-09-17T10:28:13.8473361+02:00 0HN6MU8FKFU6K:0000002F [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:28:13.8639773+02:00 0HN6MU8FKFU6K:0000002F [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET AUTOCOMMIT = 1;
+DELETE FROM `Products`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();" (0723d8ff)
+2024-09-17T10:28:13.8678926+02:00 0HN6MU8FKFU6K:0000002F [INF] Successfully deleted product with ID: 1 (a5e1a0f4)
+2024-09-17T10:28:13.8679599+02:00 0HN6MU8FKFU6K:0000002F [INF] Executed action method "AdminProductsController.DeleteProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.NoContentResult" in 29.6821ms. (50a9e262)
+2024-09-17T10:28:13.8681617+02:00 0HN6MU8FKFU6K:0000002F [INF] Executing StatusCodeResult, setting HTTP status code 204 (3fe03d2f)
+2024-09-17T10:28:13.8682083+02:00 0HN6MU8FKFU6K:0000002F [INF] Executed action "AdminProductsController.DeleteProduct (StoreApp)" in 65.4503ms (afa2e885)
+2024-09-17T10:28:13.8682487+02:00 0HN6MU8FKFU6K:0000002F [INF] Executed endpoint '"AdminProductsController.DeleteProduct (StoreApp)"' (99874f2b)
+2024-09-17T10:28:13.8684417+02:00 0HN6MU8FKFU6K:0000002F [INF] Request finished "HTTP/2" "DELETE" "https"://"localhost:7084""""/api/AdminProducts/1""" - 204 null null 74.9942ms (74253ad3)
+2024-09-17T10:28:13.8843011+02:00 0HN6MU8FKFU6K:00000031 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:28:13.8844994+02:00 0HN6MU8FKFU6K:00000031 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:13.8847458+02:00 0HN6MU8FKFU6K:00000031 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 0.3953ms (74253ad3)
+2024-09-17T10:28:13.8872077+02:00 0HN6MU8FKFU6K:00000033 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:28:13.8874031+02:00 0HN6MU8FKFU6K:00000033 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:13.8877795+02:00 0HN6MU8FKFU6K:00000033 [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:28:13.8878629+02:00 0HN6MU8FKFU6K:00000033 [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:28:13.9254165+02:00 0HN6MU8FKFU6K:00000033 [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:28:13.9255835+02:00 0HN6MU8FKFU6K:00000033 [INF] Getting all products. (c1411ab4)
+2024-09-17T10:28:13.9322147+02:00 0HN6MU8FKFU6K:00000033 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:28:13.9325054+02:00 0HN6MU8FKFU6K:00000033 [INF] Successfully retrieved 1 products. (173ea43c)
+2024-09-17T10:28:13.9325620+02:00 0HN6MU8FKFU6K:00000033 [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 7.0866ms. (50a9e262)
+2024-09-17T10:28:13.9326701+02:00 0HN6MU8FKFU6K:00000033 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:28:13.9328387+02:00 0HN6MU8FKFU6K:00000033 [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 44.9515ms (afa2e885)
+2024-09-17T10:28:13.9328696+02:00 0HN6MU8FKFU6K:00000033 [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:28:13.9330037+02:00 0HN6MU8FKFU6K:00000033 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 46.1678ms (74253ad3)
+2024-09-17T10:28:17.6135169+02:00 0HN6MU8FKFU6K:00000035 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:28:17.6138076+02:00 0HN6MU8FKFU6K:00000035 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:17.6141594+02:00 0HN6MU8FKFU6K:00000035 [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:28:17.6142615+02:00 0HN6MU8FKFU6K:00000035 [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:28:17.7050326+02:00 0HN6MU8FKFU6K:00000035 [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:28:17.7050851+02:00 0HN6MU8FKFU6K:00000035 [INF] Getting all products. (c1411ab4)
+2024-09-17T10:28:17.7874449+02:00 0HN6MU8FKFU6K:00000035 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:28:17.7877538+02:00 0HN6MU8FKFU6K:00000035 [INF] Successfully retrieved 1 products. (173ea43c)
+2024-09-17T10:28:17.7878267+02:00 0HN6MU8FKFU6K:00000035 [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 82.76ms. (50a9e262)
+2024-09-17T10:28:17.7879189+02:00 0HN6MU8FKFU6K:00000035 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:28:17.7880490+02:00 0HN6MU8FKFU6K:00000035 [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 173.7617ms (afa2e885)
+2024-09-17T10:28:17.7880750+02:00 0HN6MU8FKFU6K:00000035 [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:28:17.7897933+02:00 0HN6MU8FKFU6K:00000035 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 178.5391ms (74253ad3)
+2024-09-17T10:28:52.2390827+02:00 0HN6MU8FKFU6K:00000037 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts/2""" - null null (d509f86a)
+2024-09-17T10:28:52.2392958+02:00 0HN6MU8FKFU6K:00000037 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:52.2394055+02:00 0HN6MU8FKFU6K:00000037 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts/2""" - 204 null null 0.3753ms (74253ad3)
+2024-09-17T10:28:52.2756266+02:00 0HN6MU8FKFU6K:00000039 [INF] Request starting "HTTP/2" "DELETE" "https"://"localhost:7084""""/api/AdminProducts/2""" - null null (d509f86a)
+2024-09-17T10:28:52.2766430+02:00 0HN6MU8FKFU6K:00000039 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:52.2852043+02:00 0HN6MU8FKFU6K:00000039 [INF] Executing endpoint '"AdminProductsController.DeleteProduct (StoreApp)"' (500cc934)
+2024-09-17T10:28:52.2853119+02:00 0HN6MU8FKFU6K:00000039 [INF] Route matched with "{action = \"DeleteProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduct(Int32)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:28:52.3404667+02:00 0HN6MU8FKFU6K:00000039 [INF] Executing action method "AdminProductsController.DeleteProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:28:52.3406285+02:00 0HN6MU8FKFU6K:00000039 [INF] Deleting product with ID: 2 (db104515)
+2024-09-17T10:28:52.3638642+02:00 0HN6MU8FKFU6K:00000039 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:28:52.3934665+02:00 0HN6MU8FKFU6K:00000039 [INF] Executed DbCommand ("14"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET AUTOCOMMIT = 1;
+DELETE FROM `Products`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();" (0723d8ff)
+2024-09-17T10:28:52.3940341+02:00 0HN6MU8FKFU6K:00000039 [INF] Successfully deleted product with ID: 2 (a5e1a0f4)
+2024-09-17T10:28:52.3940946+02:00 0HN6MU8FKFU6K:00000039 [INF] Executed action method "AdminProductsController.DeleteProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.NoContentResult" in 53.5784ms. (50a9e262)
+2024-09-17T10:28:52.3941912+02:00 0HN6MU8FKFU6K:00000039 [INF] Executing StatusCodeResult, setting HTTP status code 204 (3fe03d2f)
+2024-09-17T10:28:52.3942384+02:00 0HN6MU8FKFU6K:00000039 [INF] Executed action "AdminProductsController.DeleteProduct (StoreApp)" in 108.9071ms (afa2e885)
+2024-09-17T10:28:52.3942681+02:00 0HN6MU8FKFU6K:00000039 [INF] Executed endpoint '"AdminProductsController.DeleteProduct (StoreApp)"' (99874f2b)
+2024-09-17T10:28:52.3945590+02:00 0HN6MU8FKFU6K:00000039 [INF] Request finished "HTTP/2" "DELETE" "https"://"localhost:7084""""/api/AdminProducts/2""" - 204 null null 119.0826ms (74253ad3)
+2024-09-17T10:28:52.4129695+02:00 0HN6MU8FKFU6K:0000003B [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:28:52.4131126+02:00 0HN6MU8FKFU6K:0000003B [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:52.4131962+02:00 0HN6MU8FKFU6K:0000003B [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 0.3004ms (74253ad3)
+2024-09-17T10:28:52.4288565+02:00 0HN6MU8FKFU6K:0000003D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:28:52.4299628+02:00 0HN6MU8FKFU6K:0000003D [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:28:52.4424248+02:00 0HN6MU8FKFU6K:0000003D [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:28:52.4425781+02:00 0HN6MU8FKFU6K:0000003D [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:28:52.4880550+02:00 0HN6MU8FKFU6K:0000003D [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:28:52.4881415+02:00 0HN6MU8FKFU6K:0000003D [INF] Getting all products. (c1411ab4)
+2024-09-17T10:28:52.5076948+02:00 0HN6MU8FKFU6K:0000003D [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:28:52.5078847+02:00 0HN6MU8FKFU6K:0000003D [INF] Successfully retrieved 0 products. (173ea43c)
+2024-09-17T10:28:52.5079386+02:00 0HN6MU8FKFU6K:0000003D [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 19.8387ms. (50a9e262)
+2024-09-17T10:28:52.5080573+02:00 0HN6MU8FKFU6K:0000003D [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:28:52.5082284+02:00 0HN6MU8FKFU6K:0000003D [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 65.6269ms (afa2e885)
+2024-09-17T10:28:52.5082561+02:00 0HN6MU8FKFU6K:0000003D [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:28:52.5084048+02:00 0HN6MU8FKFU6K:0000003D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 79.675ms (74253ad3)
+2024-09-17T10:34:26.1116364+02:00 0HN6MU8FKFU6L:0000000F [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/register""" - null null (d509f86a)
+2024-09-17T10:34:26.1120094+02:00 0HN6MU8FKFU6L:0000000F [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:34:26.1122842+02:00 0HN6MU8FKFU6L:0000000F [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/register""" - 204 null null 1.0885ms (74253ad3)
+2024-09-17T10:34:26.1155886+02:00 0HN6MU8FKFU6L:00000011 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/register""" - "application/json" 102 (d509f86a)
+2024-09-17T10:34:26.1158815+02:00 0HN6MU8FKFU6L:00000011 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:34:26.1161118+02:00 0HN6MU8FKFU6L:00000011 [INF] Executing endpoint '"StoreApp.Controllers.AccountController.Register (StoreApp)"' (500cc934)
+2024-09-17T10:34:26.1222539+02:00 0HN6MU8FKFU6L:00000011 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(StoreApp.DTOs.RegisterDto)" on controller "StoreApp.Controllers.AccountController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:34:26.1805016+02:00 0HN6MU8FKFU6L:00000011 [INF] Executing action method "StoreApp.Controllers.AccountController.Register (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:34:26.5611476+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
 FROM `AspNetUsers` AS `a`
 WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
 LIMIT 1" (0723d8ff)
-2024-09-17T09:18:17.8314796+02:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T10:34:26.6018478+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SET AUTOCOMMIT = 1;
 INSERT INTO `AspNetUsers` (`Id`, `AccessFailedCount`, `ConcurrencyStamp`, `Email`, `EmailConfirmed`, `LockoutEnabled`, `LockoutEnd`, `NormalizedEmail`, `NormalizedUserName`, `PasswordHash`, `PhoneNumber`, `PhoneNumberConfirmed`, `SecurityStamp`, `TwoFactorEnabled`, `UserName`)
 VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);" (0723d8ff)
-2024-09-17T09:18:17.8399800+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T10:34:26.6128257+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-17T10:34:26.6456338+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("13"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
 FROM `AspNetRoles` AS `a`
 WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
 LIMIT 2" (0723d8ff)
-2024-09-17T09:18:17.8709893+02:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@__p_0='?' (Size = 255), @__p_1='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T10:34:26.6986909+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("22"ms) [Parameters=["@__p_0='?' (Size = 255), @__p_1='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`UserId`, `a`.`RoleId`
 FROM `AspNetUserRoles` AS `a`
 WHERE (`a`.`UserId` = @__p_0) AND (`a`.`RoleId` = @__p_1)
 LIMIT 1" (0723d8ff)
-2024-09-17T09:18:17.8761046+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T10:34:26.7292022+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
 FROM `AspNetRoles` AS `a`
 WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
 LIMIT 2" (0723d8ff)
-2024-09-17T09:18:17.8896594+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T10:34:26.7508930+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
 FROM `AspNetUsers` AS `a`
 WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
 LIMIT 1" (0723d8ff)
-2024-09-17T09:18:17.9215644+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (Size = 255), @p16='?' (Size = 255), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T10:34:26.7991934+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (Size = 255), @p16='?' (Size = 255), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""INSERT INTO `AspNetUserRoles` (`RoleId`, `UserId`)
 VALUES (@p0, @p1);
 UPDATE `AspNetUsers` SET `AccessFailedCount` = @p2, `ConcurrencyStamp` = @p3, `Email` = @p4, `EmailConfirmed` = @p5, `LockoutEnabled` = @p6, `LockoutEnd` = @p7, `NormalizedEmail` = @p8, `NormalizedUserName` = @p9, `PasswordHash` = @p10, `PhoneNumber` = @p11, `PhoneNumberConfirmed` = @p12, `SecurityStamp` = @p13, `TwoFactorEnabled` = @p14, `UserName` = @p15
 WHERE `Id` = @p16 AND `ConcurrencyStamp` = @p17;
 SELECT ROW_COUNT();" (0723d8ff)
-2024-09-17T09:18:17.9381741+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T10:34:26.8132010+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
 FROM `AspNetUsers` AS `a`
 WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
 LIMIT 2" (0723d8ff)
-2024-09-17T09:18:18.0648634+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
-""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
-FROM `AspNetUsers` AS `a`
-WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
+2024-09-17T10:34:26.8215565+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
 LIMIT 1" (0723d8ff)
-2024-09-17T09:18:18.0710597+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
-""SET AUTOCOMMIT = 1;
-INSERT INTO `AspNetUsers` (`Id`, `AccessFailedCount`, `ConcurrencyStamp`, `Email`, `EmailConfirmed`, `LockoutEnabled`, `LockoutEnd`, `NormalizedEmail`, `NormalizedUserName`, `PasswordHash`, `PhoneNumber`, `PhoneNumberConfirmed`, `SecurityStamp`, `TwoFactorEnabled`, `UserName`)
-VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);" (0723d8ff)
-2024-09-17T09:18:18.0725727+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+2024-09-17T10:34:26.8292974+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
 FROM `AspNetRoles` AS `a`
 WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
 LIMIT 2" (0723d8ff)
-2024-09-17T09:18:18.0747828+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__p_0='?' (Size = 255), @__p_1='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
-""SELECT `a`.`UserId`, `a`.`RoleId`
+2024-09-17T10:34:26.8321199+02:00 0HN6MU8FKFU6L:00000011 [INF] User is already in role: "User" (a087e0f4)
+2024-09-17T10:34:26.8321755+02:00 0HN6MU8FKFU6L:00000011 [INF] User registered successfully with email: "matholecristian@gmail.com" (b8a48b9d)
+2024-09-17T10:34:26.8323856+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed action method "StoreApp.Controllers.AccountController.Register (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 651.8186ms. (50a9e262)
+2024-09-17T10:34:26.8325520+02:00 0HN6MU8FKFU6L:00000011 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2024-09-17T10:34:26.8395907+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed action "StoreApp.Controllers.AccountController.Register (StoreApp)" in 717.2851ms (afa2e885)
+2024-09-17T10:34:26.8396360+02:00 0HN6MU8FKFU6L:00000011 [INF] Executed endpoint '"StoreApp.Controllers.AccountController.Register (StoreApp)"' (99874f2b)
+2024-09-17T10:34:26.8397717+02:00 0HN6MU8FKFU6L:00000011 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/register""" - 200 null "application/json; charset=utf-8" 724.5223ms (74253ad3)
+2024-09-17T10:34:39.3054927+02:00 0HN6MU8FKFU6L:00000013 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - null null (d509f86a)
+2024-09-17T10:34:39.3056601+02:00 0HN6MU8FKFU6L:00000013 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:34:39.3057762+02:00 0HN6MU8FKFU6L:00000013 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - 204 null null 0.5217ms (74253ad3)
+2024-09-17T10:34:39.3077972+02:00 0HN6MU8FKFU6L:00000015 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - "application/json" 59 (d509f86a)
+2024-09-17T10:34:39.3079427+02:00 0HN6MU8FKFU6L:00000015 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:34:39.3080901+02:00 0HN6MU8FKFU6L:00000015 [INF] Executing endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (500cc934)
+2024-09-17T10:34:39.3081894+02:00 0HN6MU8FKFU6L:00000015 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StoreApp.DTOs.LoginDto)" on controller "StoreApp.Controllers.AccountController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:34:39.3823859+02:00 0HN6MU8FKFU6L:00000015 [INF] Executing action method "StoreApp.Controllers.AccountController.Login (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:34:39.3886962+02:00 0HN6MU8FKFU6L:00000015 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:34:39.6161548+02:00 0HN6MU8FKFU6L:00000015 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a0`.`Name`
 FROM `AspNetUserRoles` AS `a`
-WHERE (`a`.`UserId` = @__p_0) AND (`a`.`RoleId` = @__p_1)
-LIMIT 1" (0723d8ff)
-2024-09-17T09:18:18.0759807+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
-""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
-FROM `AspNetRoles` AS `a`
-WHERE `a`.`NormalizedName` = @__normalizedRoleName_0
-LIMIT 2" (0723d8ff)
-2024-09-17T09:18:18.0775217+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+INNER JOIN `AspNetRoles` AS `a0` ON `a`.`RoleId` = `a0`.`Id`
+WHERE `a`.`UserId` = @__userId_0" (0723d8ff)
+2024-09-17T10:34:39.6273290+02:00 0HN6MU8FKFU6L:00000015 [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = DateTime), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `RefreshTokens` (`Expiration`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:34:39.6311698+02:00 0HN6MU8FKFU6L:00000015 [INF] User logged in successfully: "matholecristian@gmail.com" (c7005f60)
+2024-09-17T10:34:39.6312372+02:00 0HN6MU8FKFU6L:00000015 [INF] Executed action method "StoreApp.Controllers.AccountController.Login (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 248.8106ms. (50a9e262)
+2024-09-17T10:34:39.6313873+02:00 0HN6MU8FKFU6L:00000015 [INF] Executing "OkObjectResult", writing value of type '"StoreApp.DTOs.LoginResponseDto"'. (605b4265)
+2024-09-17T10:34:39.6315264+02:00 0HN6MU8FKFU6L:00000015 [INF] Executed action "StoreApp.Controllers.AccountController.Login (StoreApp)" in 323.3164ms (afa2e885)
+2024-09-17T10:34:39.6315651+02:00 0HN6MU8FKFU6L:00000015 [INF] Executed endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (99874f2b)
+2024-09-17T10:34:39.6316929+02:00 0HN6MU8FKFU6L:00000015 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - 200 null "application/json; charset=utf-8" 324.2825ms (74253ad3)
+2024-09-17T10:34:39.6696540+02:00 0HN6MU8FKFU6L:00000017 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/UserProducts""" - null null (d509f86a)
+2024-09-17T10:34:39.6698060+02:00 0HN6MU8FKFU6L:00000017 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:34:39.6698904+02:00 0HN6MU8FKFU6L:00000017 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/UserProducts""" - 204 null null 0.2933ms (74253ad3)
+2024-09-17T10:34:39.6717284+02:00 0HN6MU8FKFU6L:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/UserProducts""" - null null (d509f86a)
+2024-09-17T10:34:39.6725080+02:00 0HN6MU8FKFU6L:00000019 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:34:39.6758751+02:00 0HN6MU8FKFU6L:00000019 [INF] Executing endpoint '"UserProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:34:39.6815026+02:00 0HN6MU8FKFU6L:00000019 [INF] Route matched with "{action = \"GetProducts\", controller = \"UserProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "UserProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:34:39.7120064+02:00 0HN6MU8FKFU6L:00000019 [INF] Executing action method "UserProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:34:39.7130501+02:00 0HN6MU8FKFU6L:00000019 [INF] Retrieving all products for the user. (e065b67c)
+2024-09-17T10:34:39.7173673+02:00 0HN6MU8FKFU6L:00000019 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:34:39.7185870+02:00 0HN6MU8FKFU6L:00000019 [INF] Successfully retrieved 0 products. (173ea43c)
+2024-09-17T10:34:39.7186902+02:00 0HN6MU8FKFU6L:00000019 [INF] Executed action method "UserProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 6.6334ms. (50a9e262)
+2024-09-17T10:34:39.7188174+02:00 0HN6MU8FKFU6L:00000019 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:34:39.7193662+02:00 0HN6MU8FKFU6L:00000019 [INF] Executed action "UserProductsController.GetProducts (StoreApp)" in 37.8171ms (afa2e885)
+2024-09-17T10:34:39.7194009+02:00 0HN6MU8FKFU6L:00000019 [INF] Executed endpoint '"UserProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:34:39.7196278+02:00 0HN6MU8FKFU6L:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/UserProducts""" - 200 null "application/json; charset=utf-8" 47.9753ms (74253ad3)
+2024-09-17T10:35:32.0025318+02:00 0HN6MU8FKFU6L:0000001B [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - null null (d509f86a)
+2024-09-17T10:35:32.0113524+02:00 0HN6MU8FKFU6L:0000001B [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:35:32.0115653+02:00 0HN6MU8FKFU6L:0000001B [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - 204 null null 13.3154ms (74253ad3)
+2024-09-17T10:35:32.0238702+02:00 0HN6MU8FKFU6L:0000001D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - "application/json" 52 (d509f86a)
+2024-09-17T10:35:32.0248590+02:00 0HN6MU8FKFU6L:0000001D [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:35:32.0373160+02:00 0HN6MU8FKFU6L:0000001D [INF] Executing endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (500cc934)
+2024-09-17T10:35:32.0374092+02:00 0HN6MU8FKFU6L:0000001D [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StoreApp.DTOs.LoginDto)" on controller "StoreApp.Controllers.AccountController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:35:32.0757888+02:00 0HN6MU8FKFU6L:0000001D [INF] Executing action method "StoreApp.Controllers.AccountController.Login (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:35:32.0787731+02:00 0HN6MU8FKFU6L:0000001D [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
 ""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
 FROM `AspNetUsers` AS `a`
-WHERE `a`.`NormalizedUserName` = @__normalizedUserName_0
-LIMIT 1" (0723d8ff)
-2024-09-17T09:18:18.0804749+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 255), @p1='?' (Size = 255), @p16='?' (Size = 255), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
-""INSERT INTO `AspNetUserRoles` (`RoleId`, `UserId`)
-VALUES (@p0, @p1);
-UPDATE `AspNetUsers` SET `AccessFailedCount` = @p2, `ConcurrencyStamp` = @p3, `Email` = @p4, `EmailConfirmed` = @p5, `LockoutEnabled` = @p6, `LockoutEnd` = @p7, `NormalizedEmail` = @p8, `NormalizedUserName` = @p9, `PasswordHash` = @p10, `PhoneNumber` = @p11, `PhoneNumberConfirmed` = @p12, `SecurityStamp` = @p13, `TwoFactorEnabled` = @p14, `UserName` = @p15
-WHERE `Id` = @p16 AND `ConcurrencyStamp` = @p17;
-SELECT ROW_COUNT();" (0723d8ff)
-2024-09-17T09:18:18.1531436+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
-2024-09-17T09:18:18.1568461+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
-2024-09-17T09:18:18.1572618+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
-2024-09-17T09:18:18.1573056+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
-2024-09-17T09:20:47.9699202+02:00 0HN6MT509L4U3:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5221""""/""" - null null (d509f86a)
-2024-09-17T09:20:48.0053631+02:00 0HN6MT509L4U3:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
-2024-09-17T09:20:48.0719556+02:00 0HN6MT509L4U3:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5221""""/""" - 404 0 null 103.884ms (74253ad3)
-2024-09-17T09:20:48.0750042+02:00 0HN6MT509L4U3:00000001 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5221""""/", Response status code: 404 (e353595a)
-2024-09-17T09:20:48.1310842+02:00 0HN6MT509L4U3:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5221""""/favicon.ico""" - null null (d509f86a)
-2024-09-17T09:20:48.1338796+02:00 0HN6MT509L4U3:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5221""""/favicon.ico""" - 404 0 null 2.7653ms (74253ad3)
-2024-09-17T09:20:48.1343268+02:00 0HN6MT509L4U3:00000002 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5221""""/favicon.ico", Response status code: 404 (e353595a)
-2024-09-17T09:20:55.2544831+02:00 0HN6MT509L4U3:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5221""""/""" - null null (d509f86a)
-2024-09-17T09:20:55.2566917+02:00 0HN6MT509L4U3:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5221""""/""" - 404 0 null 2.1961ms (74253ad3)
-2024-09-17T09:20:55.2567589+02:00 0HN6MT509L4U3:00000003 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5221""""/", Response status code: 404 (e353595a)
-2024-09-17T09:20:56.1523098+02:00 0HN6MT509L4U3:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5221""""/""" - null null (d509f86a)
-2024-09-17T09:20:56.1527028+02:00 0HN6MT509L4U3:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5221""""/""" - 404 0 null 0.3907ms (74253ad3)
-2024-09-17T09:20:56.1527565+02:00 0HN6MT509L4U3:00000004 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5221""""/", Response status code: 404 (e353595a)
-2024-09-17T09:20:56.7851290+02:00 0HN6MT509L4U3:00000005 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5221""""/""" - null null (d509f86a)
-2024-09-17T09:20:56.7854169+02:00 0HN6MT509L4U3:00000005 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5221""""/""" - 404 0 null 0.2952ms (74253ad3)
-2024-09-17T09:20:56.7854615+02:00 0HN6MT509L4U3:00000005 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5221""""/", Response status code: 404 (e353595a)
-2024-09-17T09:21:03.5242727+02:00  [INF] Application is shutting down... (90f52c38)
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:35:32.2462766+02:00 0HN6MU8FKFU6L:0000001D [INF] Executed DbCommand ("5"ms) [Parameters=["@__userId_0='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a0`.`Name`
+FROM `AspNetUserRoles` AS `a`
+INNER JOIN `AspNetRoles` AS `a0` ON `a`.`RoleId` = `a0`.`Id`
+WHERE `a`.`UserId` = @__userId_0" (0723d8ff)
+2024-09-17T10:35:32.2791017+02:00 0HN6MU8FKFU6L:0000001D [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = DateTime), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `RefreshTokens` (`Expiration`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:35:32.2830669+02:00 0HN6MU8FKFU6L:0000001D [INF] User logged in successfully: "admin@example.com" (c7005f60)
+2024-09-17T10:35:32.2831305+02:00 0HN6MU8FKFU6L:0000001D [INF] Executed action method "StoreApp.Controllers.AccountController.Login (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 207.3041ms. (50a9e262)
+2024-09-17T10:35:32.2832532+02:00 0HN6MU8FKFU6L:0000001D [INF] Executing "OkObjectResult", writing value of type '"StoreApp.DTOs.LoginResponseDto"'. (605b4265)
+2024-09-17T10:35:32.2835437+02:00 0HN6MU8FKFU6L:0000001D [INF] Executed action "StoreApp.Controllers.AccountController.Login (StoreApp)" in 246.0817ms (afa2e885)
+2024-09-17T10:35:32.2835810+02:00 0HN6MU8FKFU6L:0000001D [INF] Executed endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (99874f2b)
+2024-09-17T10:35:32.2837225+02:00 0HN6MU8FKFU6L:0000001D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - 200 null "application/json; charset=utf-8" 259.9046ms (74253ad3)
+2024-09-17T10:35:32.3113158+02:00 0HN6MU8FKFU6L:0000001F [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:35:32.3114235+02:00 0HN6MU8FKFU6L:0000001F [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:35:32.3115064+02:00 0HN6MU8FKFU6L:0000001F [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 0.3559ms (74253ad3)
+2024-09-17T10:35:32.3143766+02:00 0HN6MU8FKFU6L:00000021 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:35:32.3145306+02:00 0HN6MU8FKFU6L:00000021 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:35:32.3239450+02:00 0HN6MU8FKFU6L:00000021 [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:35:32.3240191+02:00 0HN6MU8FKFU6L:00000021 [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:35:32.3677280+02:00 0HN6MU8FKFU6L:00000021 [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:35:32.3677822+02:00 0HN6MU8FKFU6L:00000021 [INF] Getting all products. (c1411ab4)
+2024-09-17T10:35:32.3721484+02:00 0HN6MU8FKFU6L:00000021 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:35:32.3723048+02:00 0HN6MU8FKFU6L:00000021 [INF] Successfully retrieved 0 products. (173ea43c)
+2024-09-17T10:35:32.3723481+02:00 0HN6MU8FKFU6L:00000021 [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 4.5826ms. (50a9e262)
+2024-09-17T10:35:32.3724373+02:00 0HN6MU8FKFU6L:00000021 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:35:32.3725380+02:00 0HN6MU8FKFU6L:00000021 [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 48.495ms (afa2e885)
+2024-09-17T10:35:32.3725646+02:00 0HN6MU8FKFU6L:00000021 [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:35:32.3726639+02:00 0HN6MU8FKFU6L:00000021 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 59.7313ms (74253ad3)
+2024-09-17T10:35:52.4897315+02:00 0HN6MU8FKFU6L:00000023 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:35:52.4898248+02:00 0HN6MU8FKFU6L:00000023 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:35:52.4899166+02:00 0HN6MU8FKFU6L:00000023 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 0.2209ms (74253ad3)
+2024-09-17T10:35:52.4916670+02:00 0HN6MU8FKFU6L:00000025 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - "application/json" 63 (d509f86a)
+2024-09-17T10:35:52.4918047+02:00 0HN6MU8FKFU6L:00000025 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:35:52.4923228+02:00 0HN6MU8FKFU6L:00000025 [INF] Executing endpoint '"AdminProductsController.PostProduct (StoreApp)"' (500cc934)
+2024-09-17T10:35:52.4923891+02:00 0HN6MU8FKFU6L:00000025 [INF] Route matched with "{action = \"PostProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoreApp.Models.Product]] PostProduct(StoreApp.DTOs.ProductDto)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:35:52.5294301+02:00 0HN6MU8FKFU6L:00000025 [INF] Executing action method "AdminProductsController.PostProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:35:52.5294962+02:00 0HN6MU8FKFU6L:00000025 [INF] Creating new product. (365c6384)
+2024-09-17T10:35:52.5544574+02:00 0HN6MU8FKFU6L:00000025 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `Products` (`Description`, `Name`, `Price`, `Stock`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:35:52.5604810+02:00 0HN6MU8FKFU6L:00000025 [INF] Successfully created product with ID: 3 (9ba22a90)
+2024-09-17T10:35:52.5606477+02:00 0HN6MU8FKFU6L:00000025 [INF] Executed action method "AdminProductsController.PostProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 31.1725ms. (50a9e262)
+2024-09-17T10:35:52.5609176+02:00 0HN6MU8FKFU6L:00000025 [INF] Executing "CreatedAtActionResult", writing value of type '"StoreApp.Models.Product"'. (605b4265)
+2024-09-17T10:35:52.5624212+02:00 0HN6MU8FKFU6L:00000025 [INF] Executed action "AdminProductsController.PostProduct (StoreApp)" in 70.0044ms (afa2e885)
+2024-09-17T10:35:52.5624579+02:00 0HN6MU8FKFU6L:00000025 [INF] Executed endpoint '"AdminProductsController.PostProduct (StoreApp)"' (99874f2b)
+2024-09-17T10:35:52.5625684+02:00 0HN6MU8FKFU6L:00000025 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - 201 null "application/json; charset=utf-8" 71.21ms (74253ad3)
+2024-09-17T10:35:52.5748324+02:00 0HN6MU8FKFU6L:00000027 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:35:52.5751810+02:00 0HN6MU8FKFU6L:00000027 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:35:52.5755358+02:00 0HN6MU8FKFU6L:00000027 [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:35:52.5756070+02:00 0HN6MU8FKFU6L:00000027 [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:35:52.6171105+02:00 0HN6MU8FKFU6L:00000027 [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:35:52.6172021+02:00 0HN6MU8FKFU6L:00000027 [INF] Getting all products. (c1411ab4)
+2024-09-17T10:35:52.6378364+02:00 0HN6MU8FKFU6L:00000027 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:35:52.6386622+02:00 0HN6MU8FKFU6L:00000027 [INF] Successfully retrieved 1 products. (173ea43c)
+2024-09-17T10:35:52.6388441+02:00 0HN6MU8FKFU6L:00000027 [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 21.5906ms. (50a9e262)
+2024-09-17T10:35:52.6391418+02:00 0HN6MU8FKFU6L:00000027 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:35:52.6393600+02:00 0HN6MU8FKFU6L:00000027 [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 63.7283ms (afa2e885)
+2024-09-17T10:35:52.6393956+02:00 0HN6MU8FKFU6L:00000027 [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:35:52.6396829+02:00 0HN6MU8FKFU6L:00000027 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 67.5328ms (74253ad3)
+2024-09-17T10:36:18.7941704+02:00 0HN6MU8FKFU6L:00000029 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:36:18.7944483+02:00 0HN6MU8FKFU6L:00000029 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:36:18.7945267+02:00 0HN6MU8FKFU6L:00000029 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 0.5521ms (74253ad3)
+2024-09-17T10:36:18.7978696+02:00 0HN6MU8FKFU6L:0000002B [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - "application/json" 72 (d509f86a)
+2024-09-17T10:36:18.7979969+02:00 0HN6MU8FKFU6L:0000002B [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:36:18.7986874+02:00 0HN6MU8FKFU6L:0000002B [INF] Executing endpoint '"AdminProductsController.PostProduct (StoreApp)"' (500cc934)
+2024-09-17T10:36:18.7987631+02:00 0HN6MU8FKFU6L:0000002B [INF] Route matched with "{action = \"PostProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoreApp.Models.Product]] PostProduct(StoreApp.DTOs.ProductDto)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:36:18.8236235+02:00 0HN6MU8FKFU6L:0000002B [INF] Executing action method "AdminProductsController.PostProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:36:18.8236778+02:00 0HN6MU8FKFU6L:0000002B [INF] Creating new product. (365c6384)
+2024-09-17T10:36:18.8517922+02:00 0HN6MU8FKFU6L:0000002B [INF] Executed DbCommand ("22"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `Products` (`Description`, `Name`, `Price`, `Stock`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:36:18.8788818+02:00 0HN6MU8FKFU6L:0000002B [INF] Successfully created product with ID: 4 (9ba22a90)
+2024-09-17T10:36:18.8789465+02:00 0HN6MU8FKFU6L:0000002B [INF] Executed action method "AdminProductsController.PostProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 55.2889ms. (50a9e262)
+2024-09-17T10:36:18.8812547+02:00 0HN6MU8FKFU6L:0000002B [INF] Executing "CreatedAtActionResult", writing value of type '"StoreApp.Models.Product"'. (605b4265)
+2024-09-17T10:36:18.8815432+02:00 0HN6MU8FKFU6L:0000002B [INF] Executed action "AdminProductsController.PostProduct (StoreApp)" in 82.7544ms (afa2e885)
+2024-09-17T10:36:18.8815788+02:00 0HN6MU8FKFU6L:0000002B [INF] Executed endpoint '"AdminProductsController.PostProduct (StoreApp)"' (99874f2b)
+2024-09-17T10:36:18.8816935+02:00 0HN6MU8FKFU6L:0000002B [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - 201 null "application/json; charset=utf-8" 83.8552ms (74253ad3)
+2024-09-17T10:36:18.8880441+02:00 0HN6MU8FKFU6L:0000002D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:36:18.8882650+02:00 0HN6MU8FKFU6L:0000002D [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:36:18.8886160+02:00 0HN6MU8FKFU6L:0000002D [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:36:18.8887781+02:00 0HN6MU8FKFU6L:0000002D [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:36:18.9211300+02:00 0HN6MU8FKFU6L:0000002D [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:36:18.9211819+02:00 0HN6MU8FKFU6L:0000002D [INF] Getting all products. (c1411ab4)
+2024-09-17T10:36:18.9327031+02:00 0HN6MU8FKFU6L:0000002D [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:36:18.9341071+02:00 0HN6MU8FKFU6L:0000002D [INF] Successfully retrieved 2 products. (173ea43c)
+2024-09-17T10:36:18.9341623+02:00 0HN6MU8FKFU6L:0000002D [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 12.9989ms. (50a9e262)
+2024-09-17T10:36:18.9342589+02:00 0HN6MU8FKFU6L:0000002D [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:36:18.9344108+02:00 0HN6MU8FKFU6L:0000002D [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 45.6052ms (afa2e885)
+2024-09-17T10:36:18.9344496+02:00 0HN6MU8FKFU6L:0000002D [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:36:18.9345623+02:00 0HN6MU8FKFU6L:0000002D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 46.9547ms (74253ad3)
+2024-09-17T10:36:42.2356020+02:00 0HN6MU8FKFU6L:0000002F [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:36:42.2358634+02:00 0HN6MU8FKFU6L:0000002F [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:36:42.2359739+02:00 0HN6MU8FKFU6L:0000002F [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/AdminProducts""" - 204 null null 0.4358ms (74253ad3)
+2024-09-17T10:36:42.2457491+02:00 0HN6MU8FKFU6L:00000031 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - "application/json" 75 (d509f86a)
+2024-09-17T10:36:42.2468146+02:00 0HN6MU8FKFU6L:00000031 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:36:42.2472061+02:00 0HN6MU8FKFU6L:00000031 [INF] Executing endpoint '"AdminProductsController.PostProduct (StoreApp)"' (500cc934)
+2024-09-17T10:36:42.2472821+02:00 0HN6MU8FKFU6L:00000031 [INF] Route matched with "{action = \"PostProduct\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoreApp.Models.Product]] PostProduct(StoreApp.DTOs.ProductDto)" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:36:42.3031319+02:00 0HN6MU8FKFU6L:00000031 [INF] Executing action method "AdminProductsController.PostProduct (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:36:42.3032004+02:00 0HN6MU8FKFU6L:00000031 [INF] Creating new product. (365c6384)
+2024-09-17T10:36:42.3243234+02:00 0HN6MU8FKFU6L:00000031 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `Products` (`Description`, `Name`, `Price`, `Stock`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:36:42.3269622+02:00 0HN6MU8FKFU6L:00000031 [INF] Successfully created product with ID: 5 (9ba22a90)
+2024-09-17T10:36:42.3270432+02:00 0HN6MU8FKFU6L:00000031 [INF] Executed action method "AdminProductsController.PostProduct (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 23.8621ms. (50a9e262)
+2024-09-17T10:36:42.3271602+02:00 0HN6MU8FKFU6L:00000031 [INF] Executing "CreatedAtActionResult", writing value of type '"StoreApp.Models.Product"'. (605b4265)
+2024-09-17T10:36:42.3274302+02:00 0HN6MU8FKFU6L:00000031 [INF] Executed action "AdminProductsController.PostProduct (StoreApp)" in 80.1185ms (afa2e885)
+2024-09-17T10:36:42.3274661+02:00 0HN6MU8FKFU6L:00000031 [INF] Executed endpoint '"AdminProductsController.PostProduct (StoreApp)"' (99874f2b)
+2024-09-17T10:36:42.3275958+02:00 0HN6MU8FKFU6L:00000031 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/AdminProducts""" - 201 null "application/json; charset=utf-8" 81.953ms (74253ad3)
+2024-09-17T10:36:42.3445309+02:00 0HN6MU8FKFU6L:00000033 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - null null (d509f86a)
+2024-09-17T10:36:42.3447264+02:00 0HN6MU8FKFU6L:00000033 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:36:42.3451570+02:00 0HN6MU8FKFU6L:00000033 [INF] Executing endpoint '"AdminProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:36:42.3452800+02:00 0HN6MU8FKFU6L:00000033 [INF] Route matched with "{action = \"GetProducts\", controller = \"AdminProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "AdminProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:36:42.3804062+02:00 0HN6MU8FKFU6L:00000033 [INF] Executing action method "AdminProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:36:42.3804790+02:00 0HN6MU8FKFU6L:00000033 [INF] Getting all products. (c1411ab4)
+2024-09-17T10:36:42.3855620+02:00 0HN6MU8FKFU6L:00000033 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:36:42.3863518+02:00 0HN6MU8FKFU6L:00000033 [INF] Successfully retrieved 3 products. (173ea43c)
+2024-09-17T10:36:42.3864249+02:00 0HN6MU8FKFU6L:00000033 [INF] Executed action method "AdminProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 5.966ms. (50a9e262)
+2024-09-17T10:36:42.3865153+02:00 0HN6MU8FKFU6L:00000033 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:36:42.3866613+02:00 0HN6MU8FKFU6L:00000033 [INF] Executed action "AdminProductsController.GetProducts (StoreApp)" in 41.3568ms (afa2e885)
+2024-09-17T10:36:42.3866851+02:00 0HN6MU8FKFU6L:00000033 [INF] Executed endpoint '"AdminProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:36:42.3909400+02:00 0HN6MU8FKFU6L:00000033 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/AdminProducts""" - 200 null "application/json; charset=utf-8" 46.4283ms (74253ad3)
+2024-09-17T10:37:03.1822570+02:00 0HN6MU8FKFU6L:00000035 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - null null (d509f86a)
+2024-09-17T10:37:03.1823797+02:00 0HN6MU8FKFU6L:00000035 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:37:03.1824409+02:00 0HN6MU8FKFU6L:00000035 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/Account/login""" - 204 null null 0.4264ms (74253ad3)
+2024-09-17T10:37:03.1841944+02:00 0HN6MU8FKFU6L:00000037 [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - "application/json" 59 (d509f86a)
+2024-09-17T10:37:03.1842994+02:00 0HN6MU8FKFU6L:00000037 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:37:03.1846613+02:00 0HN6MU8FKFU6L:00000037 [INF] Executing endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (500cc934)
+2024-09-17T10:37:03.1847936+02:00 0HN6MU8FKFU6L:00000037 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StoreApp.DTOs.LoginDto)" on controller "StoreApp.Controllers.AccountController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:37:03.2130014+02:00 0HN6MU8FKFU6L:00000037 [INF] Executing action method "StoreApp.Controllers.AccountController.Login (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:37:03.2244877+02:00 0HN6MU8FKFU6L:00000037 [INF] Executed DbCommand ("6"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-17T10:37:03.4636374+02:00 0HN6MU8FKFU6L:00000037 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a0`.`Name`
+FROM `AspNetUserRoles` AS `a`
+INNER JOIN `AspNetRoles` AS `a0` ON `a`.`RoleId` = `a0`.`Id`
+WHERE `a`.`UserId` = @__userId_0" (0723d8ff)
+2024-09-17T10:37:03.4725084+02:00 0HN6MU8FKFU6L:00000037 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = DateTime), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `RefreshTokens` (`Expiration`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-17T10:37:03.4764193+02:00 0HN6MU8FKFU6L:00000037 [INF] User logged in successfully: "matholecristian@gmail.com" (c7005f60)
+2024-09-17T10:37:03.4764829+02:00 0HN6MU8FKFU6L:00000037 [INF] Executed action method "StoreApp.Controllers.AccountController.Login (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 263.4169ms. (50a9e262)
+2024-09-17T10:37:03.4765781+02:00 0HN6MU8FKFU6L:00000037 [INF] Executing "OkObjectResult", writing value of type '"StoreApp.DTOs.LoginResponseDto"'. (605b4265)
+2024-09-17T10:37:03.4767157+02:00 0HN6MU8FKFU6L:00000037 [INF] Executed action "StoreApp.Controllers.AccountController.Login (StoreApp)" in 291.901ms (afa2e885)
+2024-09-17T10:37:03.4767395+02:00 0HN6MU8FKFU6L:00000037 [INF] Executed endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (99874f2b)
+2024-09-17T10:37:03.4769325+02:00 0HN6MU8FKFU6L:00000037 [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - 200 null "application/json; charset=utf-8" 292.8885ms (74253ad3)
+2024-09-17T10:37:03.5491371+02:00 0HN6MU8FKFU6L:00000039 [INF] Request starting "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/UserProducts""" - null null (d509f86a)
+2024-09-17T10:37:03.5492320+02:00 0HN6MU8FKFU6L:00000039 [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:37:03.5492878+02:00 0HN6MU8FKFU6L:00000039 [INF] Request finished "HTTP/2" "OPTIONS" "https"://"localhost:7084""""/api/UserProducts""" - 204 null null 0.1912ms (74253ad3)
+2024-09-17T10:37:03.5574683+02:00 0HN6MU8FKFU6L:0000003B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/api/UserProducts""" - null null (d509f86a)
+2024-09-17T10:37:03.5576252+02:00 0HN6MU8FKFU6L:0000003B [INF] CORS policy execution successful. (5409d6ef)
+2024-09-17T10:37:03.5585134+02:00 0HN6MU8FKFU6L:0000003B [INF] Executing endpoint '"UserProductsController.GetProducts (StoreApp)"' (500cc934)
+2024-09-17T10:37:03.5586818+02:00 0HN6MU8FKFU6L:0000003B [INF] Route matched with "{action = \"GetProducts\", controller = \"UserProducts\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoreApp.Models.Product]]] GetProducts()" on controller "UserProductsController" ("StoreApp"). (122b2fdf)
+2024-09-17T10:37:03.5844175+02:00 0HN6MU8FKFU6L:0000003B [INF] Executing action method "UserProductsController.GetProducts (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-17T10:37:03.5844849+02:00 0HN6MU8FKFU6L:0000003B [INF] Retrieving all products for the user. (e065b67c)
+2024-09-17T10:37:03.5898899+02:00 0HN6MU8FKFU6L:0000003B [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT `p`.`Id`, `p`.`Description`, `p`.`Name`, `p`.`Price`, `p`.`Stock`
+FROM `Products` AS `p`" (0723d8ff)
+2024-09-17T10:37:03.5961094+02:00 0HN6MU8FKFU6L:0000003B [INF] Successfully retrieved 3 products. (173ea43c)
+2024-09-17T10:37:03.5962264+02:00 0HN6MU8FKFU6L:0000003B [INF] Executed action method "UserProductsController.GetProducts (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 11.7583ms. (50a9e262)
+2024-09-17T10:37:03.5963338+02:00 0HN6MU8FKFU6L:0000003B [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[StoreApp.Models.Product, StoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-09-17T10:37:03.5977175+02:00 0HN6MU8FKFU6L:0000003B [INF] Executed action "UserProductsController.GetProducts (StoreApp)" in 38.9935ms (afa2e885)
+2024-09-17T10:37:03.5977511+02:00 0HN6MU8FKFU6L:0000003B [INF] Executed endpoint '"UserProductsController.GetProducts (StoreApp)"' (99874f2b)
+2024-09-17T10:37:03.5978673+02:00 0HN6MU8FKFU6L:0000003B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/api/UserProducts""" - 200 null "application/json; charset=utf-8" 40.4387ms (74253ad3)

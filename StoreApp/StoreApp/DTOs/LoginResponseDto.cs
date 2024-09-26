@@ -1,4 +1,4 @@
-﻿namespace StoreApp.DTOs
+﻿namespace UserService.DTOs
 {
     public class LoginResponseDto
     {

@@ -1,4 +1,4 @@
-﻿namespace StoreApp.Models
+﻿namespace UserService.Models
 {
     public class Login
     {

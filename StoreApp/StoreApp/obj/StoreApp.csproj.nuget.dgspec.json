@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\StoreApp.csproj": {}
+    "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\StoreApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\StoreApp.csproj": {
+    "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\StoreApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\StoreApp.csproj",
+        "projectUniqueName": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\StoreApp.csproj",
         "projectName": "StoreApp",
-        "projectPath": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\StoreApp.csproj",
+        "projectPath": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\StoreApp.csproj",
         "packagesPath": "C:\\Users\\tukel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\obj\\",
+        "outputPath": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tukel\\AppData\\Roaming\\NuGet\\NuGet.Config",

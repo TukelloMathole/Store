@@ -4,12 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using StoreApp.Data;
-using StoreApp.Searvices;
-using StoreApp.Services;
 using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using UserService.Data;
+using UserService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +18,7 @@ builder.Logging.AddConsole();
 builder.Logging.AddFile("Logs/myapp-{Date}.txt");
 
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
         new MySqlServerVersion(new Version(8, 0, 39))));
 
@@ -32,7 +31,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;
 })
-    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddEntityFrameworkStores<UserDbContext>()
     .AddDefaultTokenProviders();
 
 // JWT Configuration
@@ -78,8 +77,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 // Register services
-builder.Services.AddScoped<IAccountService, AccountService>();
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IUserService, UserService.Services.UserService>();
 
 builder.Services.AddControllers();
 

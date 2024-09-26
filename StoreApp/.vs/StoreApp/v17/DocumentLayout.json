@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tukel\\source\\repos\\StoreApp\\",
+  "WorkspaceRootPath": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CCE4409-A925-421A-9B2D-59129091567D}|StoreApp\\StoreApp.csproj|c:\\users\\tukel\\source\\repos\\storeapp\\storeapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CCE4409-A925-421A-9B2D-59129091567D}|StoreApp\\StoreApp.csproj|solutionrelative:storeapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6C4EAFAE-2682-4AC7-81BE-BFE692F97E43}|APIGateway\\APIGateway.csproj|c:\\users\\tukel\\desktop\\storeapp\\store\\storeapp\\apigateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6C4EAFAE-2682-4AC7-81BE-BFE692F97E43}|APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CCE4409-A925-421A-9B2D-59129091567D}|StoreApp\\StoreApp.csproj|c:\\users\\tukel\\source\\repos\\storeapp\\storeapp\\searvices\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CCE4409-A925-421A-9B2D-59129091567D}|StoreApp\\StoreApp.csproj|solutionrelative:storeapp\\searvices\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6C4EAFAE-2682-4AC7-81BE-BFE692F97E43}|APIGateway\\APIGateway.csproj|c:\\users\\tukel\\desktop\\storeapp\\store\\storeapp\\apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6C4EAFAE-2682-4AC7-81BE-BFE692F97E43}|APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CCE4409-A925-421A-9B2D-59129091567D}|StoreApp\\StoreApp.csproj|c:\\users\\tukel\\source\\repos\\storeapp\\storeapp\\searvices\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CCE4409-A925-421A-9B2D-59129091567D}|StoreApp\\StoreApp.csproj|solutionrelative:storeapp\\searvices\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CCE4409-A925-421A-9B2D-59129091567D}|StoreApp\\UserService.csproj|c:\\users\\tukel\\desktop\\storeapp\\store\\storeapp\\storeapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CCE4409-A925-421A-9B2D-59129091567D}|StoreApp\\UserService.csproj|solutionrelative:storeapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C4EAFAE-2682-4AC7-81BE-BFE692F97E43}|APIGateway\\APIGateway.csproj|c:\\users\\tukel\\desktop\\storeapp\\store\\storeapp\\apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C4EAFAE-2682-4AC7-81BE-BFE692F97E43}|APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\Program.cs",
-              "RelativeDocumentMoniker": "StoreApp\\Program.cs",
-              "ToolTip": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\Program.cs",
-              "RelativeToolTip": "StoreApp\\Program.cs",
-              "ViewState": "AQIAAHkAAAAAAAAAAAAAAHkAAAAxAAAA",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "StoreApp\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\StoreApp\\Controllers\\UserController.cs",
+              "RelativeToolTip": "StoreApp\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAswFUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T04:27:25.355Z",
+              "WhenOpened": "2024-09-25T13:52:09.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\APIGateway\\Program.cs",
+              "RelativeDocumentMoniker": "APIGateway\\Program.cs",
+              "ToolTip": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\APIGateway\\Program.cs",
+              "RelativeToolTip": "APIGateway\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAowBQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T13:47:15.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\Searvices\\ProductService.cs",
-              "RelativeDocumentMoniker": "StoreApp\\Searvices\\ProductService.cs",
-              "ToolTip": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\Searvices\\ProductService.cs",
-              "RelativeToolTip": "StoreApp\\Searvices\\ProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T04:25:58.821Z",
+              "Title": "ocelot.json",
+              "DocumentMoniker": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\APIGateway\\ocelot.json",
+              "RelativeDocumentMoniker": "APIGateway\\ocelot.json",
+              "ToolTip": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\APIGateway\\ocelot.json",
+              "RelativeToolTip": "APIGateway\\ocelot.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-25T13:46:59.983Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\Searvices\\AccountService.cs",
-              "RelativeDocumentMoniker": "StoreApp\\Searvices\\AccountService.cs",
-              "ToolTip": "C:\\Users\\tukel\\source\\repos\\StoreApp\\StoreApp\\Searvices\\AccountService.cs",
-              "RelativeToolTip": "StoreApp\\Searvices\\AccountService.cs",
-              "ViewState": "AQIAABkAAAAAzczMzMwwwCsAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T04:24:34.899Z",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\APIGateway\\appsettings.json",
+              "RelativeDocumentMoniker": "APIGateway\\appsettings.json",
+              "ToolTip": "C:\\Users\\tukel\\Desktop\\storeApp\\Store\\StoreApp\\APIGateway\\appsettings.json",
+              "RelativeToolTip": "APIGateway\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-25T13:46:53.089Z",
               "EditorCaption": ""
             }
           ]

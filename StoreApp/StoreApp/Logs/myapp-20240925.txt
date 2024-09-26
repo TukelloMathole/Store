@@ -1,0 +1,1133 @@
+2024-09-25T07:06:06.9375545+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T07:06:10.0172810+02:00  [INF] Executed DbCommand ("103"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T07:06:10.1173435+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T07:06:10.1335976+02:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T07:06:10.1745463+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T07:06:10.2503613+02:00  [INF] Creating key {e0d301d4-4c93-4d8e-ada0-59c6f6375803} with creation date 2024-09-25 05:06:10Z, activation date 2024-09-26 08:16:48Z, and expiration date 2024-12-24 05:06:10Z. (77afce94)
+2024-09-25T07:06:10.2580127+02:00  [INF] Writing data to file '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys\key-e0d301d4-4c93-4d8e-ada0-59c6f6375803.xml"'. (da22a8b1)
+2024-09-25T07:06:10.4271070+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T07:06:10.4271959+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T07:06:10.4326584+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T07:06:10.4332935+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T07:06:10.4333687+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T07:06:11.5437394+02:00 0HN6T3V2P22SE:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T07:06:11.9583014+02:00 0HN6T3V2P22SE:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 426.7067ms (74253ad3)
+2024-09-25T07:06:11.9976973+02:00 0HN6T3V2P22SE:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T07:06:11.9984856+02:00 0HN6T3V2P22SE:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T07:06:12.0032771+02:00 0HN6T3V2P22SE:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T07:06:12.0155536+02:00 0HN6T3V2P22SE:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 11.8737ms (74253ad3)
+2024-09-25T07:06:12.0373934+02:00 0HN6T3V2P22SE:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T07:06:12.0377953+02:00 0HN6T3V2P22SE:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 200 143943 "text/css" 40.7368ms (74253ad3)
+2024-09-25T07:06:12.0744816+02:00 0HN6T3V2P22SE:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 76.0373ms (74253ad3)
+2024-09-25T07:06:12.1322690+02:00 0HN6T3V2P22SE:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T07:06:12.1338430+02:00 0HN6T3V2P22SE:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T07:06:12.1343508+02:00 0HN6T3V2P22SE:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 2.2339ms (74253ad3)
+2024-09-25T07:06:12.1740853+02:00 0HN6T3V2P22SE:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T07:06:12.4222474+02:00 0HN6T3V2P22SE:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 248.3932ms (74253ad3)
+2024-09-25T09:15:51.7007262+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T09:15:53.0463286+02:00  [INF] Executed DbCommand ("45"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T09:15:53.1398091+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T09:15:53.1560698+02:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:15:53.1993695+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:15:53.3344986+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T09:15:53.3345558+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T09:15:53.3371955+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T09:15:53.3375397+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T09:15:53.3375778+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T09:15:54.1923706+02:00 0HN6T67I7VNPE:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger""" - null null (d509f86a)
+2024-09-25T09:15:54.1950238+02:00 0HN6T67I7VNPE:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T09:15:54.4666353+02:00 0HN6T67I7VNPE:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger""" - 499 null null 284.3235ms (74253ad3)
+2024-09-25T09:15:54.5966492+02:00 0HN6T67I7VNPE:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 414.9962ms (74253ad3)
+2024-09-25T09:15:54.6164035+02:00 0HN6T67I7VNPE:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T09:15:54.6218660+02:00 0HN6T67I7VNPE:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T09:15:54.6303957+02:00 0HN6T67I7VNPE:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T09:15:54.6514200+02:00 0HN6T67I7VNPE:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 47.4523ms (74253ad3)
+2024-09-25T09:15:54.6666974+02:00 0HN6T67I7VNPE:00000015 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T09:15:54.6668951+02:00 0HN6T67I7VNPE:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 44.9975ms (74253ad3)
+2024-09-25T09:15:54.7246598+02:00 0HN6T67I7VNPE:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 94.358ms (74253ad3)
+2024-09-25T09:15:54.7610994+02:00 0HN6T67I7VNPE:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T09:15:54.7622170+02:00 0HN6T67I7VNPE:00000019 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T09:15:54.7623147+02:00 0HN6T67I7VNPE:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 1.257ms (74253ad3)
+2024-09-25T09:15:54.8272712+02:00 0HN6T67I7VNPE:0000001B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T09:15:55.0502160+02:00 0HN6T67I7VNPE:0000001B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 222.9845ms (74253ad3)
+2024-09-25T09:16:15.2990701+02:00 0HN6T67I7VNPE:0000001D [INF] Request starting "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - "application/json" 59 (d509f86a)
+2024-09-25T09:16:15.3063581+02:00 0HN6T67I7VNPE:0000001D [INF] CORS policy execution failed. (09b6f179)
+2024-09-25T09:16:15.3066984+02:00 0HN6T67I7VNPE:0000001D [INF] Request origin "https://localhost:7084" does not have permission to access the resource. (a03d560b)
+2024-09-25T09:16:15.3986088+02:00 0HN6T67I7VNPE:0000001D [INF] Executing endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (500cc934)
+2024-09-25T09:16:15.4197941+02:00 0HN6T67I7VNPE:0000001D [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StoreApp.DTOs.LoginDto)" on controller "StoreApp.Controllers.AccountController" ("StoreApp"). (122b2fdf)
+2024-09-25T09:16:15.5569769+02:00 0HN6T67I7VNPE:0000001D [INF] Executing action method "StoreApp.Controllers.AccountController.Login (StoreApp)" - Validation state: Valid (dad538d7)
+2024-09-25T09:16:15.6290699+02:00 0HN6T67I7VNPE:0000001D [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:16:15.8483629+02:00 0HN6T67I7VNPE:0000001D [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a0`.`Name`
+FROM `AspNetUserRoles` AS `a`
+INNER JOIN `AspNetRoles` AS `a0` ON `a`.`RoleId` = `a0`.`Id`
+WHERE `a`.`UserId` = @__userId_0" (0723d8ff)
+2024-09-25T09:16:16.2920616+02:00 0HN6T67I7VNPE:0000001D [INF] Executed DbCommand ("30"ms) [Parameters=["@p0='?' (DbType = DateTime), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `RefreshTokens` (`Expiration`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-25T09:16:16.3509446+02:00 0HN6T67I7VNPE:0000001D [INF] User logged in successfully: "user@example.com" (c7005f60)
+2024-09-25T09:16:16.3813182+02:00 0HN6T67I7VNPE:0000001D [INF] Executed action method "StoreApp.Controllers.AccountController.Login (StoreApp)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 794.947ms. (50a9e262)
+2024-09-25T09:16:16.3952069+02:00 0HN6T67I7VNPE:0000001D [INF] Executing "OkObjectResult", writing value of type '"StoreApp.DTOs.LoginResponseDto"'. (605b4265)
+2024-09-25T09:16:16.4092595+02:00 0HN6T67I7VNPE:0000001D [INF] Executed action "StoreApp.Controllers.AccountController.Login (StoreApp)" in 980.24ms (afa2e885)
+2024-09-25T09:16:16.4098720+02:00 0HN6T67I7VNPE:0000001D [INF] Executed endpoint '"StoreApp.Controllers.AccountController.Login (StoreApp)"' (99874f2b)
+2024-09-25T09:16:16.4190547+02:00 0HN6T67I7VNPE:0000001D [INF] Request finished "HTTP/2" "POST" "https"://"localhost:7084""""/api/Account/login""" - 200 null "application/json; charset=utf-8" 1120.0535ms (74253ad3)
+2024-09-25T09:41:34.7349385+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T09:41:35.9576373+02:00  [INF] Executed DbCommand ("47"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T09:41:36.0477161+02:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T09:41:36.0588745+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:41:36.1041249+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:41:36.2992546+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T09:41:36.2993448+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T09:41:36.3094812+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T09:41:36.3104649+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T09:41:36.3105589+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T09:41:37.2602252+02:00 0HN6T6LU33EDT:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T09:41:37.6015498+02:00 0HN6T6LU33EDT:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 349.1257ms (74253ad3)
+2024-09-25T09:41:37.6653090+02:00 0HN6T6LU33EDT:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T09:41:37.6654413+02:00 0HN6T6LU33EDT:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T09:41:37.6713671+02:00 0HN6T6LU33EDT:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 6.3622ms (74253ad3)
+2024-09-25T09:41:37.7434842+02:00 0HN6T6LU33EDT:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 77.9145ms (74253ad3)
+2024-09-25T09:41:37.7685223+02:00 0HN6T6LU33EDT:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T09:41:37.8105489+02:00 0HN6T6LU33EDT:00000015 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T09:41:37.8110967+02:00 0HN6T6LU33EDT:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 42.7689ms (74253ad3)
+2024-09-25T09:41:37.8893321+02:00 0HN6T6LU33EDT:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T09:41:38.0539874+02:00 0HN6T6LU33EDT:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 164.6791ms (74253ad3)
+2024-09-25T09:49:36.7563520+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T09:49:39.5657118+02:00  [INF] Executed DbCommand ("107"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T09:49:39.6775091+02:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T09:49:39.7013238+02:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:49:39.7986593+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:49:40.1449985+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T09:49:40.1451579+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T09:49:40.1487267+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T09:49:40.1491544+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T09:49:40.1492167+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T09:49:40.9279734+02:00 0HN6T6QE6BFL5:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T09:49:41.7559191+02:00 0HN6T6QE6BFL5:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 830.9259ms (74253ad3)
+2024-09-25T09:49:41.8664892+02:00 0HN6T6QE6BFL5:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T09:49:41.9042986+02:00 0HN6T6QE6BFL5:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T09:49:41.9150271+02:00 0HN6T6QE6BFL5:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 10.5125ms (74253ad3)
+2024-09-25T09:49:42.1277413+02:00 0HN6T6QE6BFL5:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T09:49:42.1566242+02:00 0HN6T6QE6BFL5:00000015 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T09:49:42.1568412+02:00 0HN6T6QE6BFL5:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 29.0713ms (74253ad3)
+2024-09-25T09:49:42.2271891+02:00 0HN6T6QE6BFL5:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 360.7172ms (74253ad3)
+2024-09-25T09:49:42.3059565+02:00 0HN6T6QE6BFL5:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T09:49:42.5813511+02:00 0HN6T6QE6BFL5:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 275.3686ms (74253ad3)
+2024-09-25T09:57:04.9965583+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T09:57:06.7498913+02:00  [INF] Executed DbCommand ("71"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T09:57:06.8282218+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T09:57:06.9215480+02:00  [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:57:06.9693519+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T09:57:07.0960011+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T09:57:07.0960924+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T09:57:07.1005913+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T09:57:07.1011013+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T09:57:07.1011663+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T09:57:07.8067222+02:00 0HN6T6UJFGIT1:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T09:57:08.1081755+02:00 0HN6T6UJFGIT1:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 306.4856ms (74253ad3)
+2024-09-25T09:57:08.1514528+02:00 0HN6T6UJFGIT1:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T09:57:08.1514527+02:00 0HN6T6UJFGIT1:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T09:57:08.1597649+02:00 0HN6T6UJFGIT1:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 8.1288ms (74253ad3)
+2024-09-25T09:57:08.2262822+02:00 0HN6T6UJFGIT1:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 74.7971ms (74253ad3)
+2024-09-25T09:57:08.2794997+02:00 0HN6T6UJFGIT1:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T09:57:08.2948612+02:00 0HN6T6UJFGIT1:00000015 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T09:57:08.2951065+02:00 0HN6T6UJFGIT1:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 15.5867ms (74253ad3)
+2024-09-25T09:57:08.3536527+02:00 0HN6T6UJFGIT1:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T09:57:08.5694355+02:00 0HN6T6UJFGIT1:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 215.8556ms (74253ad3)
+2024-09-25T10:21:24.9448902+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T10:21:26.9990909+02:00  [INF] Executed DbCommand ("59"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T10:21:27.0929918+02:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T10:21:27.1160100+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T10:21:27.1646005+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T10:21:27.3224846+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T10:21:27.3225668+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T10:21:27.3278525+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T10:21:27.3287040+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T10:21:27.3287928+02:00  [INF] Content root path: "C:\Users\tukel\source\repos\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T10:21:28.0908239+02:00 0HN6T7C6KRG15:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T10:21:28.3725577+02:00 0HN6T7C6KRG15:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 288.8053ms (74253ad3)
+2024-09-25T10:21:28.4154528+02:00 0HN6T7C6KRG15:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T10:21:28.4226163+02:00 0HN6T7C6KRG15:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T10:21:28.4268085+02:00 0HN6T7C6KRG15:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 11.2406ms (74253ad3)
+2024-09-25T10:21:28.4787955+02:00 0HN6T7C6KRG15:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 56.1483ms (74253ad3)
+2024-09-25T10:21:28.5315324+02:00 0HN6T7C6KRG15:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T10:21:28.5546721+02:00 0HN6T7C6KRG15:00000015 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T10:21:28.5553981+02:00 0HN6T7C6KRG15:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 23.8372ms (74253ad3)
+2024-09-25T10:21:28.5872848+02:00 0HN6T7C6KRG15:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T10:21:28.7444060+02:00 0HN6T7C6KRG15:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 157.1936ms (74253ad3)
+2024-09-25T12:37:56.9272274+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T12:38:00.8656396+02:00  [INF] Executed DbCommand ("137"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:38:01.2048426+02:00  [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:38:01.2378624+02:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:38:01.3106548+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:38:01.6965621+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T12:38:01.6966473+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T12:38:01.7036645+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T12:38:01.7041709+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T12:38:01.7042217+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T12:38:02.3194953+02:00 0HN6T9OGMDHC6:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T12:38:02.7653563+02:00 0HN6T9OGMDHC6:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 445.8862ms (74253ad3)
+2024-09-25T12:38:02.9072528+02:00 0HN6T9OGMDHC6:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T12:38:02.9477083+02:00 0HN6T9OGMDHC6:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:38:02.9483143+02:00 0HN6T9OGMDHC6:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 40.7986ms (74253ad3)
+2024-09-25T12:38:02.9486775+02:00 0HN6T9OGMDHC6:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T12:38:02.9862900+02:00 0HN6T9OGMDHC6:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T12:38:02.9912120+02:00 0HN6T9OGMDHC6:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 42.4868ms (74253ad3)
+2024-09-25T12:38:03.2408271+02:00 0HN6T9OGMDHC6:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T12:38:03.2428998+02:00 0HN6T9OGMDHC6:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:38:03.2430190+02:00 0HN6T9OGMDHC6:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 2.161ms (74253ad3)
+2024-09-25T12:38:03.2965481+02:00 0HN6T9OGMDHC6:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 310.2609ms (74253ad3)
+2024-09-25T12:38:03.4084272+02:00 0HN6T9OGMDHC6:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T12:38:03.6337667+02:00 0HN6T9OGMDHC6:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 225.0527ms (74253ad3)
+2024-09-25T12:39:40.7807435+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T12:39:43.0948626+02:00  [INF] Executed DbCommand ("87"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:39:43.3056767+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:39:43.3834990+02:00  [INF] Executed DbCommand ("40"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:39:43.4736732+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:39:43.7230935+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T12:39:43.7231770+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T12:39:43.7290341+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T12:39:43.7295627+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T12:39:43.7296078+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T12:39:44.3593869+02:00 0HN6T9PF39P45:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T12:39:44.8577366+02:00 0HN6T9PF39P45:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 486.4513ms (74253ad3)
+2024-09-25T12:39:44.8950005+02:00 0HN6T9PF39P45:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T12:39:44.9000942+02:00 0HN6T9PF39P45:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T12:39:44.9000942+02:00 0HN6T9PF39P45:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T12:39:44.9113353+02:00 0HN6T9PF39P45:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:39:44.9116555+02:00 0HN6T9PF39P45:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 16.5936ms (74253ad3)
+2024-09-25T12:39:44.9921235+02:00 0HN6T9PF39P45:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 92.065ms (74253ad3)
+2024-09-25T12:39:45.0293731+02:00 0HN6T9PF39P45:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 129.31ms (74253ad3)
+2024-09-25T12:39:45.1398303+02:00 0HN6T9PF39P45:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T12:39:45.2110376+02:00 0HN6T9PF39P45:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:39:45.2113981+02:00 0HN6T9PF39P45:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 71.3219ms (74253ad3)
+2024-09-25T12:39:45.2398967+02:00 0HN6T9PF39P45:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T12:39:45.4284524+02:00 0HN6T9PF39P45:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 188.5425ms (74253ad3)
+2024-09-25T12:40:43.3084002+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T12:40:45.8512371+02:00  [INF] Executed DbCommand ("81"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:40:45.9839034+02:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:40:46.0131804+02:00  [INF] Executed DbCommand ("13"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:40:46.0987341+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:40:46.4094843+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T12:40:46.4095926+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T12:40:46.4141621+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T12:40:46.4147595+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T12:40:46.4148402+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T12:40:47.4219830+02:00 0HN6T9Q1S8MJ7:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T12:40:47.8172362+02:00 0HN6T9Q1S8MJ7:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 357.4131ms (74253ad3)
+2024-09-25T12:40:47.8517456+02:00 0HN6T9Q1S8MJ7:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T12:40:47.9203230+02:00 0HN6T9Q1S8MJ7:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:40:47.9206488+02:00 0HN6T9Q1S8MJ7:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 68.7925ms (74253ad3)
+2024-09-25T12:40:47.9222290+02:00 0HN6T9Q1S8MJ7:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T12:40:47.9473822+02:00 0HN6T9Q1S8MJ7:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T12:40:47.9733023+02:00 0HN6T9Q1S8MJ7:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 25.8857ms (74253ad3)
+2024-09-25T12:40:48.1828022+02:00 0HN6T9Q1S8MJ7:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T12:40:48.1870112+02:00 0HN6T9Q1S8MJ7:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:40:48.1871531+02:00 0HN6T9Q1S8MJ7:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 4.3473ms (74253ad3)
+2024-09-25T12:40:48.1941193+02:00 0HN6T9Q1S8MJ7:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 271.7478ms (74253ad3)
+2024-09-25T12:40:48.2687484+02:00 0HN6T9Q1S8MJ7:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T12:40:48.5015749+02:00 0HN6T9Q1S8MJ7:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 232.8135ms (74253ad3)
+2024-09-25T12:45:02.8755484+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T12:45:05.6966037+02:00  [INF] Executed DbCommand ("74"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:45:05.8740289+02:00  [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:45:05.9444694+02:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:45:06.0108900+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:45:06.2718073+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T12:45:06.2718886+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T12:45:06.2761839+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T12:45:06.2767686+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T12:45:06.2768220+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T12:45:07.1151295+02:00 0HN6T9SF7TDEO:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T12:45:07.4493224+02:00 0HN6T9SF7TDEO:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 336.5886ms (74253ad3)
+2024-09-25T12:45:11.4392820+02:00 0HN6T9SF7TDEO:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T12:45:11.4543159+02:00 0HN6T9SF7TDEO:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:45:11.4546371+02:00 0HN6T9SF7TDEO:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 15.3145ms (74253ad3)
+2024-09-25T12:45:11.4777940+02:00 0HN6T9SF7TDEO:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T12:45:11.4781703+02:00 0HN6T9SF7TDEO:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T12:45:11.6907949+02:00 0HN6T9SF7TDEO:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 212.4401ms (74253ad3)
+2024-09-25T12:45:11.7454530+02:00 0HN6T9SF7TDEO:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 267.5433ms (74253ad3)
+2024-09-25T12:45:12.5416692+02:00 0HN6T9SF7TDEO:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T12:45:12.5737258+02:00 0HN6T9SF7TDEO:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:45:12.5738513+02:00 0HN6T9SF7TDEO:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 32.1654ms (74253ad3)
+2024-09-25T12:45:13.9254847+02:00 0HN6T9SF7TDEO:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T12:45:14.1161065+02:00 0HN6T9SF7TDEO:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 190.5902ms (74253ad3)
+2024-09-25T12:52:05.7987841+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T12:52:10.1351876+02:00  [INF] Executed DbCommand ("77"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:52:10.4008351+02:00  [INF] Executed DbCommand ("11"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T12:52:10.4236622+02:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:52:10.5171367+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T12:52:10.7970087+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T12:52:10.7971005+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T12:52:10.8021306+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T12:52:10.8027404+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T12:52:10.8027999+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T12:52:12.7252833+02:00 0HN6TA0DRI9CD:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T12:52:13.2928166+02:00 0HN6TA0DRI9CD:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 569.4477ms (74253ad3)
+2024-09-25T12:52:13.4057074+02:00 0HN6TA0DRI9CD:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T12:52:13.4244051+02:00 0HN6TA0DRI9CD:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:52:13.4246972+02:00 0HN6TA0DRI9CD:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 18.9385ms (74253ad3)
+2024-09-25T12:52:13.4248874+02:00 0HN6TA0DRI9CD:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T12:52:13.4314604+02:00 0HN6TA0DRI9CD:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T12:52:13.4502277+02:00 0HN6TA0DRI9CD:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 25.1861ms (74253ad3)
+2024-09-25T12:52:13.6047978+02:00 0HN6TA0DRI9CD:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 173.3105ms (74253ad3)
+2024-09-25T12:52:13.6913162+02:00 0HN6TA0DRI9CD:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T12:52:13.6931517+02:00 0HN6TA0DRI9CD:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T12:52:13.6932427+02:00 0HN6TA0DRI9CD:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 1.9292ms (74253ad3)
+2024-09-25T12:52:13.7085589+02:00 0HN6TA0DRI9CD:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T12:52:13.9125499+02:00 0HN6TA0DRI9CD:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 203.9513ms (74253ad3)
+2024-09-25T14:27:40.3647517+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T14:27:42.5140175+02:00  [INF] Executed DbCommand ("81"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T14:27:42.6510622+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T14:27:42.6894383+02:00  [INF] Executed DbCommand ("16"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T14:27:42.7894590+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T14:27:43.1179544+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T14:27:43.1180976+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T14:27:43.1234797+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T14:27:43.1240456+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T14:27:43.1241056+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T14:27:43.7599916+02:00 0HN6TBLQ3VO30:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T14:27:44.1276192+02:00 0HN6TBLQ3VO30:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 369.9488ms (74253ad3)
+2024-09-25T14:27:44.1840397+02:00 0HN6TBLQ3VO30:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T14:27:44.2019514+02:00 0HN6TBLQ3VO30:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T14:27:44.2024553+02:00 0HN6TBLQ3VO30:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 18.2493ms (74253ad3)
+2024-09-25T14:27:44.2065891+02:00 0HN6TBLQ3VO30:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T14:27:44.2982567+02:00 0HN6TBLQ3VO30:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T14:27:44.3042723+02:00 0HN6TBLQ3VO30:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 97.5401ms (74253ad3)
+2024-09-25T14:27:44.5720952+02:00 0HN6TBLQ3VO30:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T14:27:44.5747447+02:00 0HN6TBLQ3VO30:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T14:27:44.5748798+02:00 0HN6TBLQ3VO30:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 2.7547ms (74253ad3)
+2024-09-25T14:27:44.6637953+02:00 0HN6TBLQ3VO30:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 365.4418ms (74253ad3)
+2024-09-25T14:27:44.7443164+02:00 0HN6TBLQ3VO30:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T14:27:44.9633778+02:00 0HN6TBLQ3VO30:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 219.034ms (74253ad3)
+2024-09-25T14:48:58.8641361+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T14:49:01.4505294+02:00  [INF] Executed DbCommand ("80"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T14:49:01.6070866+02:00  [INF] Executed DbCommand ("9"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T14:49:01.6430405+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T14:49:01.7182827+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T14:49:01.9164353+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T14:49:01.9165121+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T14:49:01.9213673+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T14:49:01.9219239+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T14:49:01.9219865+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T14:49:03.4264089+02:00 0HN6TC1N9084O:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T14:49:04.0208441+02:00 0HN6TC1N9084O:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 596.4862ms (74253ad3)
+2024-09-25T14:49:04.2287602+02:00 0HN6TC1N9084O:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T14:49:04.2905704+02:00 0HN6TC1N9084O:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T14:49:04.2943652+02:00 0HN6TC1N9084O:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T14:49:04.2964716+02:00 0HN6TC1N9084O:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 67.5841ms (74253ad3)
+2024-09-25T14:49:04.3420077+02:00 0HN6TC1N9084O:00000013 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T14:49:04.3422173+02:00 0HN6TC1N9084O:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 51.6274ms (74253ad3)
+2024-09-25T14:49:04.8026916+02:00 0HN6TC1N9084O:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T14:49:04.8048344+02:00 0HN6TC1N9084O:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T14:49:04.8049235+02:00 0HN6TC1N9084O:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 2.2377ms (74253ad3)
+2024-09-25T14:49:04.8162618+02:00 0HN6TC1N9084O:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 521.7765ms (74253ad3)
+2024-09-25T14:49:05.0139450+02:00 0HN6TC1N9084O:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T14:49:05.2496311+02:00 0HN6TC1N9084O:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 235.4765ms (74253ad3)
+2024-09-25T14:55:01.8822256+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T14:55:04.0050812+02:00  [INF] Executed DbCommand ("71"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T14:55:04.1808339+02:00  [INF] Executed DbCommand ("13"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T14:55:04.2061786+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T14:55:04.2721173+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T14:55:04.4689940+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T14:55:04.4690858+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T14:55:04.4735006+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T14:55:04.4740364+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T14:55:04.4740929+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T14:55:05.7756659+02:00 0HN6TC53BHTM1:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T14:55:06.4415723+02:00 0HN6TC53BHTM1:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 659.7057ms (74253ad3)
+2024-09-25T14:55:06.4639300+02:00 0HN6TC53BHTM1:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T14:55:06.4812162+02:00 0HN6TC53BHTM1:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T14:55:06.4824599+02:00 0HN6TC53BHTM1:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 18.3048ms (74253ad3)
+2024-09-25T14:55:06.5189853+02:00 0HN6TC53BHTM1:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T14:55:06.5255129+02:00 0HN6TC53BHTM1:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T14:55:06.5364225+02:00 0HN6TC53BHTM1:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 17.4165ms (74253ad3)
+2024-09-25T14:55:06.6379244+02:00 0HN6TC53BHTM1:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 112.3139ms (74253ad3)
+2024-09-25T14:55:06.8283184+02:00 0HN6TC53BHTM1:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T14:55:06.8422000+02:00 0HN6TC53BHTM1:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T14:55:06.8423031+02:00 0HN6TC53BHTM1:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 13.9942ms (74253ad3)
+2024-09-25T14:55:06.8444625+02:00 0HN6TC53BHTM1:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T14:55:07.0576708+02:00 0HN6TC53BHTM1:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 213.2392ms (74253ad3)
+2024-09-25T14:59:23.7239606+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T14:59:26.3038968+02:00  [INF] Executed DbCommand ("89"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T14:59:26.5142840+02:00  [INF] Executed DbCommand ("17"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T14:59:26.5314126+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T14:59:26.6326049+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T14:59:26.8391285+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T14:59:26.8392019+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T14:59:26.8435600+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T14:59:26.8441419+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T14:59:26.8441892+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T14:59:27.5435671+02:00 0HN6TC7HF03QP:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T14:59:27.9697006+02:00 0HN6TC7HF03QP:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 430.8042ms (74253ad3)
+2024-09-25T14:59:28.0261943+02:00 0HN6TC7HF03QP:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T14:59:28.0300237+02:00 0HN6TC7HF03QP:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T14:59:28.0380001+02:00 0HN6TC7HF03QP:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 7.7478ms (74253ad3)
+2024-09-25T14:59:28.0410812+02:00 0HN6TC7HF03QP:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T14:59:28.0412467+02:00 0HN6TC7HF03QP:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 15.1154ms (74253ad3)
+2024-09-25T14:59:28.0413960+02:00 0HN6TC7HF03QP:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T14:59:28.2178466+02:00 0HN6TC7HF03QP:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 176.1159ms (74253ad3)
+2024-09-25T14:59:28.4931317+02:00 0HN6TC7HF03QP:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T14:59:28.6158485+02:00 0HN6TC7HF03QP:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T14:59:28.6160106+02:00 0HN6TC7HF03QP:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 122.8153ms (74253ad3)
+2024-09-25T14:59:28.6263044+02:00 0HN6TC7HF03QP:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T14:59:28.8604304+02:00 0HN6TC7HF03QP:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 234.1149ms (74253ad3)
+2024-09-25T15:09:30.3708298+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:09:33.1913579+02:00  [INF] Executed DbCommand ("89"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:09:33.3785516+02:00  [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:09:33.4031387+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:09:33.5112636+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:09:33.8748809+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T15:09:33.8749721+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:09:33.8816862+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:09:33.8835451+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:09:33.8836101+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:09:34.8740863+02:00 0HN6TCD6EERVP:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:09:35.3087814+02:00 0HN6TCD6EERVP:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 436.6521ms (74253ad3)
+2024-09-25T15:09:35.3792905+02:00 0HN6TCD6EERVP:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:09:35.3941168+02:00 0HN6TCD6EERVP:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:09:35.3945818+02:00 0HN6TCD6EERVP:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 15.1231ms (74253ad3)
+2024-09-25T15:09:35.3948945+02:00 0HN6TCD6EERVP:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:09:35.4017650+02:00 0HN6TCD6EERVP:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:09:35.4118036+02:00 0HN6TCD6EERVP:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 16.8638ms (74253ad3)
+2024-09-25T15:09:35.5774481+02:00 0HN6TCD6EERVP:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 175.6348ms (74253ad3)
+2024-09-25T15:09:35.6428286+02:00 0HN6TCD6EERVP:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:09:35.6451411+02:00 0HN6TCD6EERVP:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:09:35.6452730+02:00 0HN6TCD6EERVP:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 2.4225ms (74253ad3)
+2024-09-25T15:09:35.7196317+02:00 0HN6TCD6EERVP:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:09:35.9678435+02:00 0HN6TCD6EERVP:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 248.1846ms (74253ad3)
+2024-09-25T15:10:58.3974865+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:11:01.5369811+02:00  [INF] Executed DbCommand ("99"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:11:02.5539779+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:11:02.6730452+02:00  [INF] Executed DbCommand ("50"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:11:02.7402703+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:11:03.0327075+02:00  [INF] Now listening on: "https://localhost:7084" (d826f4b8)
+2024-09-25T15:11:03.0327986+02:00  [INF] Now listening on: "http://localhost:5001" (d826f4b8)
+2024-09-25T15:11:03.0451336+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:11:03.0457703+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:11:03.0458618+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:11:03.8198280+02:00 0HN6TCE106RQQ:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:11:04.2420924+02:00 0HN6TCE106RQQ:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 425.2641ms (74253ad3)
+2024-09-25T15:11:04.4761165+02:00 0HN6TCE106RQQ:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:11:04.5391428+02:00 0HN6TCE106RQQ:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:11:04.5655940+02:00 0HN6TCE106RQQ:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 89.3794ms (74253ad3)
+2024-09-25T15:11:04.6770783+02:00 0HN6TCE106RQQ:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:11:04.6993970+02:00 0HN6TCE106RQQ:00000015 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:11:04.6994131+02:00 0HN6TCE106RQQ:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 160.2578ms (74253ad3)
+2024-09-25T15:11:04.6995232+02:00 0HN6TCE106RQQ:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 22.4485ms (74253ad3)
+2024-09-25T15:11:04.8077877+02:00 0HN6TCE106RQQ:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:11:05.0301150+02:00 0HN6TCE106RQQ:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:7084""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 222.2948ms (74253ad3)
+2024-09-25T15:13:07.4691234+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:13:13.9697274+02:00  [INF] Executed DbCommand ("141"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:13:14.1582120+02:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:13:14.1769491+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:13:14.2996796+02:00  [INF] Executed DbCommand ("14"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:13:16.1096214+02:00  [INF] Now listening on: "https://localhost:5002" (d826f4b8)
+2024-09-25T15:13:16.1097284+02:00  [INF] Now listening on: "http://localhost:5001" (d826f4b8)
+2024-09-25T15:13:16.1144563+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:13:16.1150754+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:13:16.1151350+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:13:18.2842613+02:00 0HN6TCF8O37TB:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/swagger""" - null null (d509f86a)
+2024-09-25T15:13:18.8052295+02:00 0HN6TCF8O37TB:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/swagger""" - 301 0 null 523.0286ms (74253ad3)
+2024-09-25T15:13:18.8298038+02:00 0HN6TCF8O37TB:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:13:19.1159014+02:00 0HN6TCF8O37TB:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 286.0062ms (74253ad3)
+2024-09-25T15:13:19.1824983+02:00 0HN6TCF8O37TB:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:13:19.1921123+02:00 0HN6TCF8O37TB:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/swagger-ui-bundle.js""" - null null (d509f86a)
+2024-09-25T15:13:19.2044541+02:00 0HN6TCF8O37TB:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:13:19.2044541+02:00 0HN6TCF8O37TB:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/swagger-ui-standalone-preset.js""" - null null (d509f86a)
+2024-09-25T15:13:19.2131275+02:00 0HN6TCF8O37TB:0000001B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:13:19.4219763+02:00 0HN6TCF8O37TB:00000013 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:13:19.4219763+02:00 0HN6TCF8O37TB:00000017 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:13:19.4221495+02:00 0HN6TCF8O37TB:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/swagger-ui.css""" - 200 143943 "text/css" 239.622ms (74253ad3)
+2024-09-25T15:13:19.4221494+02:00 0HN6TCF8O37TB:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/swagger-ui-standalone-preset.js""" - 200 339486 "text/javascript" 217.663ms (74253ad3)
+2024-09-25T15:13:19.4696909+02:00 0HN6TCF8O37TB:00000015 [INF] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:13:19.4698562+02:00 0HN6TCF8O37TB:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/swagger-ui-bundle.js""" - 200 1096145 "text/javascript" 277.7326ms (74253ad3)
+2024-09-25T15:13:19.5478542+02:00 0HN6TCF8O37TB:0000001B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 334.6872ms (74253ad3)
+2024-09-25T15:13:19.8790329+02:00 0HN6TCF8O37TB:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 674.5441ms (74253ad3)
+2024-09-25T15:13:19.9497935+02:00 0HN6TCF8O37TB:0000001D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:13:19.9500797+02:00 0HN6TCF8O37TB:0000001D [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:13:19.9501430+02:00 0HN6TCF8O37TB:0000001D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 0.3638ms (74253ad3)
+2024-09-25T15:13:20.0916276+02:00 0HN6TCF8O37TB:0000001F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:13:20.8523102+02:00 0HN6TCF8O37TB:0000001F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5002""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 760.6304ms (74253ad3)
+2024-09-25T15:14:45.3377223+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:14:50.1331935+02:00  [INF] Executed DbCommand ("113"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:14:50.4848433+02:00  [INF] Executed DbCommand ("89"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:14:50.5148394+02:00  [INF] Executed DbCommand ("8"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:14:50.7631608+02:00  [INF] Executed DbCommand ("23"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:14:51.3545163+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T15:14:51.3546109+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:14:51.4045531+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:14:51.4051705+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:14:51.4052240+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:14:52.8242778+02:00 0HN6TCG5335A9:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger""" - null null (d509f86a)
+2024-09-25T15:14:53.0604394+02:00 0HN6TCG5335A9:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger""" - 301 0 null 238.3586ms (74253ad3)
+2024-09-25T15:14:53.0734181+02:00 0HN6TCG5335A9:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:14:53.3673072+02:00 0HN6TCG5335A9:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 293.776ms (74253ad3)
+2024-09-25T15:14:53.4888357+02:00 0HN6TCG5335A9:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:14:53.4942235+02:00 0HN6TCG5335A9:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui-bundle.js""" - null null (d509f86a)
+2024-09-25T15:14:53.4985016+02:00 0HN6TCG5335A9:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui-standalone-preset.js""" - null null (d509f86a)
+2024-09-25T15:14:54.1238899+02:00 0HN6TCG5335A9:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:14:54.4218752+02:00 0HN6TCG5335A9:0000001B [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:14:55.6229037+02:00 0HN6TCG5335A9:0000001B [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 1201.0237ms (74253ad3)
+2024-09-25T15:14:55.6399558+02:00 0HN6TCG5335A9:00000013 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:14:55.6401411+02:00 0HN6TCG5335A9:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - 200 143943 "text/css" 2151.2973ms (74253ad3)
+2024-09-25T15:14:56.0300423+02:00 0HN6TCG5335A9:00000015 [INF] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:14:56.0309315+02:00 0HN6TCG5335A9:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui-bundle.js""" - 200 1096145 "text/javascript" 2536.2343ms (74253ad3)
+2024-09-25T15:14:56.1415993+02:00 0HN6TCG5335A9:00000017 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:14:56.1418510+02:00 0HN6TCG5335A9:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui-standalone-preset.js""" - 200 339486 "text/javascript" 2643.3395ms (74253ad3)
+2024-09-25T15:14:56.7689292+02:00 0HN6TCG5335A9:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 2645.0173ms (74253ad3)
+2024-09-25T15:14:57.9725283+02:00 0HN6TCG5335A9:0000001D [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:14:57.9729724+02:00 0HN6TCG5335A9:0000001D [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:14:57.9730522+02:00 0HN6TCG5335A9:0000001D [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 0.5665ms (74253ad3)
+2024-09-25T15:15:06.6797885+02:00 0HN6TCG5335A9:0000001F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:15:07.1217252+02:00 0HN6TCG5335A9:0000001F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 441.9351ms (74253ad3)
+2024-09-25T15:19:28.4769974+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:19:31.6487327+02:00  [INF] Executed DbCommand ("79"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:19:31.8669244+02:00  [INF] Executed DbCommand ("9"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:19:31.8929277+02:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:19:31.9827511+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:19:32.2285701+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T15:19:32.2286572+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:19:32.2337477+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:19:32.2344560+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:19:32.2345256+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:19:33.5452168+02:00 0HN6TCIOPH1M1:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:19:33.9505643+02:00 0HN6TCIOPH1M1:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 405.8771ms (74253ad3)
+2024-09-25T15:19:34.0529282+02:00 0HN6TCIOPH1M1:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:19:34.0747837+02:00 0HN6TCIOPH1M1:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:19:34.0751078+02:00 0HN6TCIOPH1M1:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 22.1149ms (74253ad3)
+2024-09-25T15:19:34.0753081+02:00 0HN6TCIOPH1M1:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:19:34.0809769+02:00 0HN6TCIOPH1M1:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:19:34.1462120+02:00 0HN6TCIOPH1M1:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 70.8271ms (74253ad3)
+2024-09-25T15:19:34.2090605+02:00 0HN6TCIOPH1M1:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 128.0515ms (74253ad3)
+2024-09-25T15:19:34.3240482+02:00 0HN6TCIOPH1M1:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:19:34.3259323+02:00 0HN6TCIOPH1M1:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:19:34.3260443+02:00 0HN6TCIOPH1M1:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 1.9704ms (74253ad3)
+2024-09-25T15:19:34.3725623+02:00 0HN6TCIOPH1M1:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:19:34.6297542+02:00 0HN6TCIOPH1M1:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 257.1809ms (74253ad3)
+2024-09-25T15:20:23.2940158+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:20:25.7334173+02:00  [INF] Executed DbCommand ("78"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:20:25.8836298+02:00  [INF] Executed DbCommand ("11"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:20:25.9042635+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:20:25.9859629+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:20:26.2230171+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T15:20:26.2232874+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:20:26.2305444+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:20:26.2313084+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:20:26.2313748+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:20:27.3727264+02:00 0HN6TCJ8QTPUO:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:20:27.8027214+02:00 0HN6TCJ8QTPUO:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:20:27.8765646+02:00 0HN6TCJ8QTPUO:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:20:27.8779249+02:00 0HN6TCJ8QTPUO:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 74.5339ms (74253ad3)
+2024-09-25T15:20:27.8784871+02:00 0HN6TCJ8QTPUO:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:20:27.9659836+02:00 0HN6TCJ8QTPUO:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:20:27.9694582+02:00 0HN6TCJ8QTPUO:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 601.2972ms (74253ad3)
+2024-09-25T15:20:27.9739188+02:00 0HN6TCJ8QTPUO:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 95.3905ms (74253ad3)
+2024-09-25T15:20:28.1246824+02:00 0HN6TCJ8QTPUO:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 158.6717ms (74253ad3)
+2024-09-25T15:20:28.2744744+02:00 0HN6TCJ8QTPUO:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:20:28.2857232+02:00 0HN6TCJ8QTPUO:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:20:28.2859618+02:00 0HN6TCJ8QTPUO:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 11.4008ms (74253ad3)
+2024-09-25T15:20:28.2918873+02:00 0HN6TCJ8QTPUO:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:20:28.4818874+02:00 0HN6TCJ8QTPUO:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 189.9886ms (74253ad3)
+2024-09-25T15:21:28.9694821+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:21:31.6740603+02:00  [INF] Executed DbCommand ("75"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:21:31.8102860+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:21:31.8268643+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:21:31.9197655+02:00  [INF] Executed DbCommand ("11"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:21:32.1494224+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T15:21:32.1495071+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:21:32.1741641+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:21:32.1747653+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:21:32.1748256+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:21:33.1089982+02:00 0HN6TCJSEPA0F:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:21:33.5275412+02:00 0HN6TCJSEPA0F:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:21:33.5276916+02:00 0HN6TCJSEPA0F:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 385.7576ms (74253ad3)
+2024-09-25T15:21:33.5323106+02:00 0HN6TCJSEPA0F:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:21:33.6927734+02:00 0HN6TCJSEPA0F:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:21:33.7303149+02:00 0HN6TCJSEPA0F:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 197.8319ms (74253ad3)
+2024-09-25T15:21:33.7475918+02:00 0HN6TCJSEPA0F:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:21:33.7480168+02:00 0HN6TCJSEPA0F:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 220.5201ms (74253ad3)
+2024-09-25T15:21:33.7900390+02:00 0HN6TCJSEPA0F:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 97.2404ms (74253ad3)
+2024-09-25T15:21:33.8367432+02:00 0HN6TCJSEPA0F:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:21:33.8385330+02:00 0HN6TCJSEPA0F:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:21:33.8386472+02:00 0HN6TCJSEPA0F:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 1.8834ms (74253ad3)
+2024-09-25T15:21:33.9004007+02:00 0HN6TCJSEPA0F:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:21:34.1359105+02:00 0HN6TCJSEPA0F:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 235.5003ms (74253ad3)
+2024-09-25T15:26:35.4003220+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:26:38.0293233+02:00  [INF] Executed DbCommand ("70"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:26:38.2659635+02:00  [INF] Executed DbCommand ("98"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:26:38.2931671+02:00  [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:26:38.4048734+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:26:38.6296608+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T15:26:38.6297321+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:26:38.6336618+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:26:38.6341868+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:26:38.6342280+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:26:39.7750394+02:00 0HN6TCMNRCSUM:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:26:40.2250416+02:00 0HN6TCMNRCSUM:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 451.5833ms (74253ad3)
+2024-09-25T15:26:40.2630275+02:00 0HN6TCMNRCSUM:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:26:40.2673033+02:00 0HN6TCMNRCSUM:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:26:40.2753553+02:00 0HN6TCMNRCSUM:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 7.8419ms (74253ad3)
+2024-09-25T15:26:40.5377834+02:00 0HN6TCMNRCSUM:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:26:40.5579433+02:00 0HN6TCMNRCSUM:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 294.9243ms (74253ad3)
+2024-09-25T15:26:40.6996579+02:00 0HN6TCMNRCSUM:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:26:40.7048217+02:00 0HN6TCMNRCSUM:00000015 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:26:40.7050086+02:00 0HN6TCMNRCSUM:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 167.1968ms (74253ad3)
+2024-09-25T15:26:40.8852539+02:00 0HN6TCMNRCSUM:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 185.5692ms (74253ad3)
+2024-09-25T15:48:00.5353239+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:48:04.2103747+02:00  [INF] Executed DbCommand ("84"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:48:04.4033675+02:00  [INF] Executed DbCommand ("11"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:48:04.5149896+02:00  [INF] Executed DbCommand ("44"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:48:04.5833262+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:48:04.7878754+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T15:48:04.7879617+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:48:04.7991472+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:48:04.8169570+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:48:04.8170601+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:48:05.7444720+02:00 0HN6TD2N6K01P:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:48:06.0866012+02:00 0HN6TD2N6K01P:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 344.1607ms (74253ad3)
+2024-09-25T15:48:06.2270279+02:00 0HN6TD2N6K01P:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:48:06.2465468+02:00 0HN6TD2N6K01P:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:48:06.2468511+02:00 0HN6TD2N6K01P:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 19.749ms (74253ad3)
+2024-09-25T15:48:06.2470803+02:00 0HN6TD2N6K01P:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:48:06.2571831+02:00 0HN6TD2N6K01P:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:48:06.2630083+02:00 0HN6TD2N6K01P:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 15.8796ms (74253ad3)
+2024-09-25T15:48:06.3445984+02:00 0HN6TD2N6K01P:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 87.3898ms (74253ad3)
+2024-09-25T15:48:06.3589884+02:00 0HN6TD2N6K01P:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:48:06.3608558+02:00 0HN6TD2N6K01P:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:48:06.3609971+02:00 0HN6TD2N6K01P:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 1.9551ms (74253ad3)
+2024-09-25T15:48:06.5898405+02:00 0HN6TD2N6K01P:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:48:06.7747501+02:00 0HN6TD2N6K01P:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 184.9054ms (74253ad3)
+2024-09-25T15:53:19.4712139+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:53:22.4717169+02:00  [INF] Executed DbCommand ("73"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:53:22.6038342+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:53:22.6735404+02:00  [INF] Executed DbCommand ("36"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:53:22.7621029+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:53:23.0479938+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T15:53:23.0480987+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:53:23.0534094+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:53:23.0540517+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:53:23.0541133+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:53:24.8623397+02:00 0HN6TD5M2B184:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:53:25.3372153+02:00 0HN6TD5M2B184:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 478.9651ms (74253ad3)
+2024-09-25T15:53:25.3472932+02:00 0HN6TD5M2B184:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:53:25.3656836+02:00 0HN6TD5M2B184:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:53:25.3661863+02:00 0HN6TD5M2B184:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 18.7435ms (74253ad3)
+2024-09-25T15:53:25.3663808+02:00 0HN6TD5M2B184:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:53:25.3859047+02:00 0HN6TD5M2B184:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:53:25.3976412+02:00 0HN6TD5M2B184:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 11.7159ms (74253ad3)
+2024-09-25T15:53:25.6478265+02:00 0HN6TD5M2B184:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:53:25.6500116+02:00 0HN6TD5M2B184:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:53:25.6500964+02:00 0HN6TD5M2B184:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 2.271ms (74253ad3)
+2024-09-25T15:53:25.6559104+02:00 0HN6TD5M2B184:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 289.4213ms (74253ad3)
+2024-09-25T15:53:25.7529444+02:00 0HN6TD5M2B184:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:53:26.0463478+02:00 0HN6TD5M2B184:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 293.3874ms (74253ad3)
+2024-09-25T15:56:53.7169445+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T15:56:56.2664335+02:00  [INF] Executed DbCommand ("74"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:56:56.4040520+02:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T15:56:56.4272043+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:56:56.5069961+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T15:56:56.7158049+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T15:56:56.7158898+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T15:56:56.7207645+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T15:56:56.7212944+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T15:56:56.7213524+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T15:56:57.4480206+02:00 0HN6TD7LKOR0N:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T15:56:57.8495524+02:00 0HN6TD7LKOR0N:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 403.864ms (74253ad3)
+2024-09-25T15:56:57.9523582+02:00 0HN6TD7LKOR0N:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T15:56:57.9750370+02:00 0HN6TD7LKOR0N:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T15:56:57.9839649+02:00 0HN6TD7LKOR0N:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T15:56:58.0360747+02:00 0HN6TD7LKOR0N:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 60.8569ms (74253ad3)
+2024-09-25T15:56:58.0610975+02:00 0HN6TD7LKOR0N:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:56:58.0612800+02:00 0HN6TD7LKOR0N:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 108.9676ms (74253ad3)
+2024-09-25T15:56:58.0996811+02:00 0HN6TD7LKOR0N:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 115.6866ms (74253ad3)
+2024-09-25T15:56:58.1110150+02:00 0HN6TD7LKOR0N:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - null null (d509f86a)
+2024-09-25T15:56:58.1127762+02:00 0HN6TD7LKOR0N:00000017 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T15:56:58.1128840+02:00 0HN6TD7LKOR0N:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/favicon-32x32.png""" - 499 628 "image/png" 1.8527ms (74253ad3)
+2024-09-25T15:56:58.2636863+02:00 0HN6TD7LKOR0N:00000019 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T15:56:58.4515432+02:00 0HN6TD7LKOR0N:00000019 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 187.8593ms (74253ad3)
+2024-09-25T16:00:21.5087850+02:00 0HN6TD7LKOR0S:0000000F [INF] Request starting "HTTP/2" "POST" "https"://"localhost:5001""""/api/User/login""" - "application/json" 59 (d509f86a)
+2024-09-25T16:00:21.5198687+02:00 0HN6TD7LKOR0S:0000000F [INF] CORS policy execution failed. (09b6f179)
+2024-09-25T16:00:21.5203851+02:00 0HN6TD7LKOR0S:0000000F [INF] Request origin "https://localhost:5001" does not have permission to access the resource. (a03d560b)
+2024-09-25T16:00:21.7137992+02:00 0HN6TD7LKOR0S:0000000F [INF] Executing endpoint '"UserService.Controllers.UserController.Login (UserService)"' (500cc934)
+2024-09-25T16:00:21.7521588+02:00 0HN6TD7LKOR0S:0000000F [INF] Route matched with "{action = \"Login\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.DTOs.LoginDto)" on controller "UserService.Controllers.UserController" ("UserService"). (122b2fdf)
+2024-09-25T16:00:21.9866200+02:00 0HN6TD7LKOR0S:0000000F [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T16:00:22.4518560+02:00 0HN6TD7LKOR0S:0000000F [INF] Executed DbCommand ("18"ms) [Parameters=["@__userId_0='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a0`.`Name`
+FROM `AspNetUserRoles` AS `a`
+INNER JOIN `AspNetRoles` AS `a0` ON `a`.`RoleId` = `a0`.`Id`
+WHERE `a`.`UserId` = @__userId_0" (0723d8ff)
+2024-09-25T16:00:22.9609872+02:00 0HN6TD7LKOR0S:0000000F [INF] Executed DbCommand ("20"ms) [Parameters=["@p0='?' (DbType = DateTime), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 255)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO `RefreshTokens` (`Expiration`, `IsRevoked`, `Token`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `RefreshTokens`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();" (0723d8ff)
+2024-09-25T16:00:23.1581228+02:00 0HN6TD7LKOR0S:0000000F [INF] User logged in successfully: "user@example.com" (c7005f60)
+2024-09-25T16:00:23.1673677+02:00 0HN6TD7LKOR0S:0000000F [INF] Executing "OkObjectResult", writing value of type '"UserService.DTOs.LoginResponseDto"'. (605b4265)
+2024-09-25T16:00:23.1903857+02:00 0HN6TD7LKOR0S:0000000F [INF] Executed action "UserService.Controllers.UserController.Login (UserService)" in 1430.683ms (afa2e885)
+2024-09-25T16:00:23.1913838+02:00 0HN6TD7LKOR0S:0000000F [INF] Executed endpoint '"UserService.Controllers.UserController.Login (UserService)"' (99874f2b)
+2024-09-25T16:00:23.2021072+02:00 0HN6TD7LKOR0S:0000000F [INF] Request finished "HTTP/2" "POST" "https"://"localhost:5001""""/api/User/login""" - 200 null "application/json; charset=utf-8" 1693.3571ms (74253ad3)
+2024-09-25T16:13:57.6289528+02:00  [INF] User profile is available. Using '"C:\Users\tukel\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-09-25T16:13:59.8585664+02:00  [INF] Executed DbCommand ("69"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T16:14:00.1220301+02:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`ConcurrencyStamp`, `a`.`Name`, `a`.`NormalizedName`
+FROM `AspNetRoles` AS `a`
+WHERE `a`.`NormalizedName` = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2024-09-25T16:14:00.1482143+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T16:14:00.2128838+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+WHERE `a`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 2" (0723d8ff)
+2024-09-25T16:14:00.4737694+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2024-09-25T16:14:00.4738520+02:00  [INF] Now listening on: "http://localhost:5221" (d826f4b8)
+2024-09-25T16:14:00.4785640+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-09-25T16:14:00.4790654+02:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-09-25T16:14:00.4791200+02:00  [INF] Content root path: "C:\Users\tukel\Desktop\storeApp\Store\StoreApp\StoreApp" (cc26f24e)
+2024-09-25T16:14:02.3313493+02:00 0HN6TDH6OHG22:0000000F [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - null null (d509f86a)
+2024-09-25T16:14:02.8065617+02:00 0HN6TDH6OHG22:0000000F [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 476.2295ms (74253ad3)
+2024-09-25T16:14:02.9335594+02:00 0HN6TDH6OHG22:00000011 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - null null (d509f86a)
+2024-09-25T16:14:03.0191648+02:00 0HN6TDH6OHG22:00000011 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2024-09-25T16:14:03.0194179+02:00 0HN6TDH6OHG22:00000011 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/swagger-ui.css""" - 499 143943 "text/css" 85.817ms (74253ad3)
+2024-09-25T16:14:03.0196644+02:00 0HN6TDH6OHG22:00000013 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-09-25T16:14:03.0967955+02:00 0HN6TDH6OHG22:00000015 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - null null (d509f86a)
+2024-09-25T16:14:03.1326651+02:00 0HN6TDH6OHG22:00000013 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_framework/aspnetcore-browser-refresh.js""" - 200 13758 "application/javascript; charset=utf-8" 112.947ms (74253ad3)
+2024-09-25T16:14:03.2673275+02:00 0HN6TDH6OHG22:00000015 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 170.5129ms (74253ad3)
+2024-09-25T16:14:03.3849339+02:00 0HN6TDH6OHG22:00000017 [INF] Request starting "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-09-25T16:14:03.5675298+02:00 0HN6TDH6OHG22:00000017 [INF] Request finished "HTTP/2" "GET" "https"://"localhost:5001""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 182.5797ms (74253ad3)

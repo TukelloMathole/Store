@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "sME381v9fwVDpVeSwE5EBZBAHFY9HxjxUlMd9E/7q7Q=",
-  "Source": "StoreApp",
-  "BasePath": "_content/StoreApp",
+  "Hash": "O8Tqr60KHaal7sbBqGqAczjLLnVLN/6xBqPiCBbMeO8=",
+  "Source": "UserService",
+  "BasePath": "_content/UserService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
