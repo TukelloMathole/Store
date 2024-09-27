@@ -1,80 +1,85 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System.Threading.Tasks;
+using UserService.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+using Microsoft.Extensions.Logging;
+using UserService.DTOs;
+using UserService.Services;
 
 namespace UserService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UserController : ControllerBase
     {
-        // Dummy data store (In a real application, you'd use a database)
-        private static List<User> users = new List<User>
-        {
-            new User { Id = 1, Name = "Alice", Email = "alice@example.com" },
-            new User { Id = 2, Name = "Bob", Email = "bob@example.com" }
-        };
+        private readonly IUserManagementService _accountService;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<UserController> _logger;
 
-        // GET: api/users
-        [HttpGet]
-        public ActionResult<IEnumerable<User>> GetUsers()
+        public UserController(IUserManagementService accountService, UserManager<IdentityUser> userManager, ILogger<UserController> logger)
         {
-            return Ok(users); // Returns a list of users
+            _accountService = accountService;
+            _userManager = userManager;
+            _logger = logger;
         }
-
-        // GET: api/users/{id}
-        [HttpGet("{id}")]
-        public ActionResult<User> GetUser(int id)
+        //registration route
+        //api/register
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterDto model)
         {
-            var user = users.Find(u => u.Id == id);
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Invalid registration attempt.");
+                return BadRequest(new { message = "Invalid registration data" });
+            }
+
+            var registrationSuccess = await _accountService.RegisterUserAsync(model);
+
+            if (!registrationSuccess)
+            {
+                _logger.LogError("User registration failed for email: {Email}", model.Email);
+                return BadRequest(new { message = "User registration failed" });
+            }
+
+            var user = await _accountService.FindUserByEmailAsync(model.Email);
             if (user == null)
             {
-                return NotFound(); // Return 404 if user not found
+                _logger.LogError("User not found after registration for email: {Email}", model.Email);
+                return BadRequest(new { message = "User not found after registration" });
             }
-            return Ok(user);
-        }
 
-        // POST: api/users
-        [HttpPost]
-        public ActionResult<User> CreateUser(User newUser)
-        {
-            newUser.Id = users.Count + 1; // Generate a new ID
-            users.Add(newUser); // Add user to the dummy store
-            return CreatedAtAction(nameof(GetUser), new { id = newUser.Id }, newUser); // Return 201 Created
-        }
-
-        // PUT: api/users/{id}
-        [HttpPut("{id}")]
-        public IActionResult UpdateUser(int id, User updatedUser)
-        {
-            var user = users.Find(u => u.Id == id);
-            if (user == null)
+            var roleAssignmentSuccess = await _accountService.AssignRoleAsync(user, "User");
+            if (!roleAssignmentSuccess)
             {
-                return NotFound(); // Return 404 if user not found
+                _logger.LogError("Failed to assign role to user: {UserId}", user.Id);
+                return BadRequest(new { message = "Failed to assign role to user" });
             }
-            user.Name = updatedUser.Name;
-            user.Email = updatedUser.Email;
-            return NoContent(); // Return 204 No Content on success
-        }
 
-        // DELETE: api/users/{id}
-        [HttpDelete("{id}")]
-        public IActionResult DeleteUser(int id)
+            _logger.LogInformation("User registered successfully with email: {Email}", model.Email);
+            return Ok(new { message = "User registered and assigned role successfully" });
+        }
+        //log-in route
+        //api/login
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
-            var user = users.Find(u => u.Id == id);
-            if (user == null)
+            if (!ModelState.IsValid)
             {
-                return NotFound(); // Return 404 if user not found
+                _logger.LogWarning("Invalid login attempt.");
+                return BadRequest(new { message = "Invalid login data" });
             }
-            users.Remove(user); // Remove user from the list
-            return NoContent(); // Return 204 No Content on success
-        }
-    }
 
-    // Dummy User Model (In a real application, you'd have a separate model class)
-    public class User
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+            var loginResponse = await _accountService.LoginAsync(loginDto);
+            if (loginResponse.IsLoggedIn)
+            {
+                _logger.LogInformation("User logged in successfully: {Email}", loginDto.Email);
+                return Ok(loginResponse);
+            }
+
+            _logger.LogWarning("Unauthorized login attempt for email: {Email}", loginDto.Email);
+            return Unauthorized(new { message = "Invalid login attempt" });
+        }
     }
 }

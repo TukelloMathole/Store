@@ -13,7 +13,21 @@ builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange
 // Add Ocelot services to the DI container
 builder.Services.AddOcelot();
 
+// Configure CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.AllowAnyOrigin()        // You can restrict to specific origins if needed
+               .AllowAnyMethod()        // Allow GET, POST, PUT, DELETE, etc.
+               .AllowAnyHeader();       // Allow any headers
+    });
+});
+
 var app = builder.Build();
+
+// Enable CORS
+app.UseCors("CorsPolicy");
 
 // Optional: Enable HTTPS redirection
 app.UseHttpsRedirection();

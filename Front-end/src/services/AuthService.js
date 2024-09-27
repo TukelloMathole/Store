@@ -2,7 +2,7 @@ import axios from 'axios';
 import store from '@/store'; // Import your Vuex store
 import Cookies from 'js-cookie'; // Import js-cookie
 
-const API_URL = 'https://localhost:7084'; // Replace with your backend API URL
+const API_URL = 'https://localhost:5000/'; // Replace with your backend API URL
 
 class AuthService {
   setAuthHeader(token) {
@@ -11,7 +11,7 @@ class AuthService {
 
   async login(credentials) {
     try {
-      const response = await axios.post(`${API_URL}/api/Account/login`, credentials);
+      const response = await axios.post(`${API_URL}user/login`, credentials);
       
       const { accessToken, refreshToken, role, user } = response.data;
 
