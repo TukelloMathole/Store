@@ -23,7 +23,6 @@ const actions = {
       console.error('Failed to fetch user products:', error);
     }
   },
-  
   async fetchProductById({ commit }, id) {
     try {
       const response = await axiosInstance.get(`/api/UserProducts/${id}`);

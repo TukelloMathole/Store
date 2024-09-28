@@ -3,6 +3,7 @@
     <p class="title">Register</p>
     <p class="message">Signup now and get full access to our app.</p>
     <form @submit.prevent="handleRegister" class="form">
+      <!-- Form Inputs -->
       <label>
         <input v-model="firstName" type="text" class="input" required placeholder=" ">
         <span>Firstname</span>
@@ -27,11 +28,20 @@
       <div v-if="error" class="error">{{ error }}</div>
       <p class="signin">Already have an account? <router-link to="/login">Login</router-link></p>
     </form>
+
+    <!-- Pop-up for response messages -->
+    <div v-if="showPopup" class="popup">
+      <div class="popup-content">
+        <p>{{ popupMessage }}</p>
+        <button @click="closePopup">Close</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+import AuthService from '@/services/AuthService';
 
 export default {
   name: 'UserRegister',
@@ -43,35 +53,67 @@ export default {
       password: '',
       confirmPassword: '',
       error: '',
-      loading: false
+      loading: false,
+      popupMessage: '', // Message to display in the pop-up
+      showPopup: false  // Control visibility of the pop-up
     };
   },
   methods: {
-    ...mapActions('auth', ['register']),
-    async handleRegister() {
-      this.loading = true;
-      this.error = '';
-      if (this.password !== this.confirmPassword) {
-        this.error = 'Passwords do not match.';
-        this.loading = false;
-        return;
-      }
-      try {
-        await this.register({ 
-          firstName: this.firstName, 
-          lastName: this.lastName, 
-          email: this.email, 
-          password: this.password 
-        });
-        this.$router.push({ name: 'Login' });
-      } catch (err) {
-        console.error(err);
-        this.error = err.message || 'Registration failed. Please check your details and try again.';
-      } finally {
-        this.loading = false;
-      }
+  ...mapActions('auth', ['register']),
+  async handleRegister() {
+    this.loading = true;
+    this.error = '';
+    
+    // Check if passwords match
+    if (this.password !== this.confirmPassword) {
+      this.error = 'Passwords do not match.';
+      this.loading = false;
+      return;
     }
+    
+    try {
+      // Call the AuthService to register the user
+      await AuthService.register({
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.email,
+        password: this.password
+      });
+      
+      // Show success pop-up
+      this.showPopupWithMessage('Registration successful!');
+      
+      // Delay the navigation to login until after the popup
+      setTimeout(() => {
+        this.$router.push({ name: 'Login' });
+      }, 3000); // Wait for 3 seconds before redirecting to login
+    } catch (err) {
+      console.error(err);
+      // Show error pop-up if registration fails
+      this.showPopupWithMessage(err.message || 'Registration failed. Please check your details and try again.');
+    } finally {
+      this.loading = false;
+    }
+  },
+  
+  // Method to show pop-up messages
+  showPopupWithMessage(message) {
+    this.popupMessage = message;
+    this.showPopup = true;
+    
+    // Auto-hide pop-up after 3 seconds
+    setTimeout(() => {
+      this.showPopup = false;
+    }, 3000);
+  },
+  
+  // Method to close the pop-up
+  closePopup() {
+    this.showPopup = false;
   }
+}
+
+
 };
 </script>
 
@@ -184,5 +226,35 @@ export default {
 
 .signin a:hover {
   text-decoration: underline royalblue;
+}
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-content button {
+  margin-top: 10px;
+  background-color: #fff;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #ddd;
 }
 </style>

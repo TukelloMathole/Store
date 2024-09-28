@@ -11,7 +11,7 @@ class AuthService {
 
   async login(credentials) {
     try {
-      const response = await axios.post(`${API_URL}user/login`, credentials);
+      const response = await axios.post(`${API_URL}UserAuthentication/login`, credentials);
       
       const { accessToken, refreshToken, role, user } = response.data;
 
@@ -42,8 +42,8 @@ class AuthService {
   }
 
   async register(userData) {
-    const response = await axios.post(`${API_URL}/api/Account/register`, userData);
-    
+    const response = await axios.post(`${API_URL}UserRegistration/register`, userData);
+    console.log(response);
     const { accessToken, refreshToken, role, user } = response.data;
 
     // Commit the tokens and user data to the Vuex store
@@ -73,7 +73,7 @@ class AuthService {
       this.setAuthHeader(accessToken);
 
       // Fetch user data
-      const response = await axios.get(`${API_URL}/api/Account/user`);
+      const response = await axios.get(`${API_URL}UserManagement/user/email/{email}`);
       return response;
     } else {
       throw new Error('No access token found.');

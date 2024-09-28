@@ -15,6 +15,14 @@
       <div v-if="error" class="error">{{ error }}</div>
       <p class="signin">Don't have an account? <router-link to="/register">Register</router-link></p>
     </form>
+    
+    <!-- Popup for success/error messages -->
+    <div v-if="showPopup" class="popup-overlay" @click="closePopup">
+      <div class="popup">
+        <p>{{ popupMessage }}</p>
+        <button @click="closePopup">Close</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,21 +37,29 @@ export default {
       email: '',
       password: '',
       error: '',
-      loading: false
+      loading: false,
+      showPopup: false,
+      popupMessage: ''
     };
   },
   methods: {
-    ...mapMutations('auth', ['setTokens', 'setUserRole']), // Correct mutation names here
-    async handleLogin() {
-      this.loading = true;
-      this.error = '';
-      try {
-        const response = await AuthService.login({ email: this.email, password: this.password });
-        const { accessToken, refreshToken, role } = response.data;
-        
-        // Store tokens and role in Vuex
-        this.setTokens({ accessToken, refreshToken });
-        this.setUserRole(role); // Use the correct mutation name
+  ...mapMutations('auth', ['setTokens', 'setUserRole']),
+  async handleLogin() {
+    this.loading = true;
+    this.error = '';
+    try {
+      const response = await AuthService.login({ email: this.email, password: this.password });
+      const { accessToken, refreshToken, role } = response.data;
+      
+      // Store tokens and role in Vuex
+      this.setTokens({ accessToken, refreshToken });
+      this.setUserRole(role); 
+
+      // Show success popup
+      this.showPopupWithMessage('Login successful!');
+      
+      // Delay the navigation until after the popup is shown
+      setTimeout(() => {
         // Redirect based on user role
         if (role === 'Admin') {
           this.$router.push({ name: 'AdminDashboard' });
@@ -52,14 +68,28 @@ export default {
         } else {
           console.error('Unknown role:', role);
         }
-      } catch (err) {
-        console.error('Login error:', err);
-        this.error = 'Login failed. Please check your credentials and try again.';
-      } finally {
-        this.loading = false;
-      }
+      }, 3000); // Wait for 3 seconds before redirecting
+    } catch (err) {
+      console.error('Login error:', err);
+      this.showPopupWithMessage('Login failed. Please check your credentials and try again.');
+    } finally {
+      this.loading = false;
     }
+  },
+  showPopupWithMessage(message) {
+    this.popupMessage = message;
+    this.showPopup = true;
+
+    // Auto-hide popup after 3 seconds
+    setTimeout(() => {
+      this.showPopup = false;
+    }, 3000);
+  },
+  closePopup() {
+    this.showPopup = false;
   }
+}
+
 };
 </script>
 
@@ -173,5 +203,40 @@ export default {
 .signin a:hover {
   text-decoration: underline royalblue;
 }
-</style>
 
+/* Popup styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 8px 12px;
+  background-color: royalblue;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: rgb(56, 90, 194);
+}
+</style>

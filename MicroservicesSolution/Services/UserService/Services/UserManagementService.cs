@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using UserService.Models;
-using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UserService.Data;
 using UserService.DTOs;
 
@@ -44,170 +40,67 @@ namespace UserService.Services
             }
         }
 
-        public async Task<bool> RegisterUserAsync(RegisterDto registerDto)
+        public async Task<List<IdentityUser>> GetUsersWithRoleAsync(string roleName)
         {
-            var user = new IdentityUser
+            var users = await _userManager.Users.ToListAsync();
+            var usersWithRole = new List<IdentityUser>();
+
+            foreach (var user in users)
             {
-                UserName = registerDto.Email,
-                Email = registerDto.Email
-            };
-
-            var result = await _userManager.CreateAsync(user, registerDto.Password);
-
-            if (result.Succeeded)
-            {
-
-                if (!await _roleManager.RoleExistsAsync("User"))
+                if (await _userManager.IsInRoleAsync(user, roleName))
                 {
-                    await _roleManager.CreateAsync(new IdentityRole("User"));
+                    usersWithRole.Add(user);
                 }
-
-                await _userManager.AddToRoleAsync(user, "User");
-                return true;
             }
 
-            _logger.LogWarning("User registration failed for email: {Email}. Errors: {Errors}", registerDto.Email, string.Join(", ", result.Errors.Select(e => e.Description)));
-            return false;
+            return usersWithRole;
         }
 
-        public async Task<bool> AssignRoleAsync(IdentityUser user, string roleName)
+        public async Task<List<IdentityUser>> GetAllUsersAsync()
         {
-            if (user == null || string.IsNullOrEmpty(roleName))
-            {
-                _logger.LogWarning("Invalid parameters: User or RoleName is null or empty.");
-                return false;
-            }
-
             try
             {
-                if (!await _roleManager.RoleExistsAsync(roleName))
-                {
-                    var roleResult = await _roleManager.CreateAsync(new IdentityRole(roleName));
-                    if (!roleResult.Succeeded)
-                    {
-                        _logger.LogWarning("Failed to create role: {RoleName}. Errors: {Errors}", roleName, string.Join(", ", roleResult.Errors.Select(e => e.Description)));
-                        return false;
-                    }
-                }
-
-                var isInRole = await _userManager.IsInRoleAsync(user, roleName);
-                if (isInRole)
-                {
-                    _logger.LogInformation("User is already in role: {RoleName}", roleName);
-                    return true;
-                }
-
-                var result = await _userManager.AddToRoleAsync(user, roleName);
-                if (!result.Succeeded)
-                {
-                    _logger.LogWarning("Failed to add user to role: {RoleName}. Errors: {Errors}", roleName, string.Join(", ", result.Errors.Select(e => e.Description)));
-                    return false;
-                }
-
-                return true;
+                return await _userManager.Users.ToListAsync();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Exception assigning role: {RoleName}", roleName);
+                _logger.LogError(ex, "Error fetching all users.");
+                throw;
+            }
+        }
+
+        public async Task<bool> UpdateUserAsync(IdentityUser user)
+        {
+            try
+            {
+                var result = await _userManager.UpdateAsync(user);
+                return result.Succeeded;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating user: {UserId}", user.Id);
                 return false;
             }
         }
 
-        public async Task<LoginResponseDto> LoginAsync(LoginDto loginDto)
+        public async Task<bool> DeleteUserAsync(string userId)
         {
-            // Validate the input DTO
-            if (loginDto == null)
+            try
             {
-                throw new ArgumentNullException(nameof(loginDto), "Login DTO cannot be null.");
-            }
-
-            if (string.IsNullOrEmpty(loginDto.Email))
-            {
-                throw new ArgumentException("Email cannot be null or empty.", nameof(loginDto.Email));
-            }
-
-            if (string.IsNullOrEmpty(loginDto.Password))
-            {
-                throw new ArgumentException("Password cannot be null or empty.", nameof(loginDto.Password));
-            }
-
-            var user = await _userManager.FindByEmailAsync(loginDto.Email);
-
-            if (user != null && await _userManager.CheckPasswordAsync(user, loginDto.Password))
-            {
-                var userRoles = await _userManager.GetRolesAsync(user);
-                var role = userRoles.FirstOrDefault(); // Assuming the user has one role
-
-                // Create claims
-                var authClaims = new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier, user.Id),
-            new Claim(JwtRegisteredClaimNames.Sub, user.UserName ?? throw new ArgumentNullException(nameof(user.UserName))),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(JwtRegisteredClaimNames.Iss, _configuration["Jwt:Issuer"] ?? throw new ArgumentNullException("Jwt:Issuer"))
-        };
-
-                foreach (var userRole in userRoles)
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user == null)
                 {
-                    authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+                    return false;
                 }
 
-                var token = new JwtSecurityToken(
-                    issuer: _configuration["Jwt:Issuer"],
-                    expires: DateTime.Now.AddMinutes(double.Parse(_configuration["Jwt:ExpiryMinutes"] ?? "60")), // Fallback to a default value
-                    claims: authClaims,
-                    signingCredentials: new SigningCredentials(
-                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? throw new ArgumentNullException("Jwt:Key"))),
-                        SecurityAlgorithms.HmacSha256));
-
-                var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
-
-                var refreshToken = GenerateJwtRefreshToken();
-                await StoreRefreshTokenAsync(user.Id, refreshToken, DateTime.Now.AddMonths(1));
-
-                return new LoginResponseDto
-                {
-                    IsLoggedIn = true,
-                    AccessToken = accessToken,
-                    RefreshToken = refreshToken,
-                    Role = role
-                };
+                var result = await _userManager.DeleteAsync(user);
+                return result.Succeeded;
             }
-
-            _logger.LogWarning("Invalid login attempt for email: {Email}", loginDto.Email);
-            return new LoginResponseDto
+            catch (Exception ex)
             {
-                IsLoggedIn = false,
-                AccessToken = null,
-                RefreshToken = null,
-                Role = null
-            };
-        }
-
-
-        private string GenerateJwtRefreshToken()
-        {
-            var randomBytes = new byte[64];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(randomBytes);
+                _logger.LogError(ex, "Error deleting user: {UserId}", userId);
+                return false;
             }
-
-            return Convert.ToBase64String(randomBytes);
-        }
-
-        private async Task StoreRefreshTokenAsync(string userId, string refreshToken, DateTime expiration)
-        {
-            var token = new RefreshToken
-            {
-                Token = refreshToken,
-                UserId = userId,
-                Expiration = expiration,
-                IsRevoked = false
-            };
-
-            _context.RefreshTokens.Add(token);
-            await _context.SaveChangesAsync();
         }
     }
 }

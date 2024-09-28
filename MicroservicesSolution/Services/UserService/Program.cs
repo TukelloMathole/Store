@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using UserService.Data;
 using UserService.Services;
 using UserService.Models;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 //builder.Services.AddScoped<IUserService, UserService.Services.UserService>();
 builder.Services.AddScoped<IUserManagementService, UserManagementService>();
+builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
+builder.Services.AddScoped<IUserRegistrationService, UserRegistrationService>();
 
 
 
@@ -25,6 +28,36 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
+
+    // Add JWT Authentication to Swagger
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please insert JWT with Bearer into field",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+    {
+        new OpenApiSecurityScheme {
+            Reference = new OpenApiReference {
+                Type = ReferenceType.SecurityScheme,
+                Id = "Bearer"
+            }
+        },
+        new string[] { }
+    }
+    });
+
+});
+
 
 var app = builder.Build();
 
