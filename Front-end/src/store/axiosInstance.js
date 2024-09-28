@@ -9,7 +9,6 @@ const axiosInstance = axios.create({
   }
 });
 
-// Add a request interceptor to include the token in headers and validate it
 axiosInstance.interceptors.request.use(
   config => {
     const token = Cookies.get('accessToken'); // Get the token from cookies

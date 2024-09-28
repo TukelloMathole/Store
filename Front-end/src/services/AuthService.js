@@ -1,6 +1,7 @@
 import axios from 'axios';
 import store from '@/store'; // Import your Vuex store
 import Cookies from 'js-cookie'; // Import js-cookie
+import {jwtDecode} from 'jwt-decode';
 
 const API_URL = 'https://localhost:5000/'; // Replace with your backend API URL
 
@@ -69,16 +70,21 @@ class AuthService {
     // Get the access token from cookies
     const accessToken = Cookies.get('accessToken');
     if (accessToken) {
-      // Set the auth header
-      this.setAuthHeader(accessToken);
+        // Decode the JWT token
+        const decodedToken = jwtDecode(accessToken);
+        const email = decodedToken.unique_name;
+        console.log(email);
+        // Set the auth header
+        this.setAuthHeader(accessToken);
 
-      // Fetch user data
-      const response = await axios.get(`${API_URL}UserManagement/user/email/{email}`);
-      return response;
+        // Fetch user data using the extracted email
+        const response = await axios.get(`${API_URL}UserManagement/user/email/${email}`);
+        console.log(response);
+        return response.data; // Return the actual data
     } else {
-      throw new Error('No access token found.');
+        throw new Error('No access token found.');
     }
-  }
+}
 }
 
 export default new AuthService();
