@@ -1,7 +1,7 @@
 import axios from 'axios';
 import store from '@/store'; // Import your Vuex store
-import Cookies from 'js-cookie'; // Import js-cookie
-import {jwtDecode} from 'jwt-decode';
+import TokenService from '@/services/TokenService'; // Import your TokenService
+import { jwtDecode } from 'jwt-decode';
 
 const API_URL = 'https://localhost:5000/'; // Replace with your backend API URL
 
@@ -14,10 +14,12 @@ class AuthService {
     try {
       const response = await axios.post(`${API_URL}UserAuthentication/login`, credentials);
       
-      const { accessToken, refreshToken, role, user } = response.data;
+      const { accessToken, refreshToken, role, user, exp } = response.data;
 
-      // Commit the tokens and user data to the Vuex store
-      store.commit('auth/setTokens', { accessToken, refreshToken });
+      // Save tokens using TokenService
+      TokenService.saveTokens({ accessToken, refreshToken, expiration: exp });
+      
+      // Commit the user data to the Vuex store
       store.commit('auth/setUser', user);
       store.commit('auth/setUserRole', role);
       
@@ -31,24 +33,24 @@ class AuthService {
   }
 
   async logout() {
-    // Remove tokens from cookies and Vuex state
-    store.commit('auth/clearTokens');
+    // Clear tokens using TokenService
+    TokenService.clearTokens();
+    
+    // Remove user data from Vuex state
     store.commit('auth/clearUser');
     store.commit('auth/clearUserRole');
     delete axios.defaults.headers.common['Authorization'];
-
-    // Clear cookies as well
-    Cookies.remove('accessToken');
-    Cookies.remove('refreshToken');
   }
 
   async register(userData) {
     const response = await axios.post(`${API_URL}UserRegistration/register`, userData);
     console.log(response);
-    const { accessToken, refreshToken, role, user } = response.data;
+    const { accessToken, refreshToken, role, user, exp } = response.data;
 
-    // Commit the tokens and user data to the Vuex store
-    store.commit('auth/setTokens', { accessToken, refreshToken });
+    // Save tokens using TokenService
+    TokenService.saveTokens({ accessToken, refreshToken, expiration: exp });
+    
+    // Commit the user data to the Vuex store
     store.commit('auth/setUser', user);
     store.commit('auth/setUserRole', role);
     
@@ -58,8 +60,9 @@ class AuthService {
   }
 
   async updateProfile(userData) {
-    const response = await axios.put(`${API_URL}/api/Account/updateProfile`, userData);
-    
+    console.log(userData);
+    const response = await axios.put(`${API_URL}userManagement/user/update`, userData);
+    console.log(response);
     // Commit the updated user data to the Vuex store
     store.commit('auth/setUser', response.data.user);
     
@@ -67,13 +70,12 @@ class AuthService {
   }
 
   async getUserData() {
-    // Get the access token from cookies
-    const accessToken = Cookies.get('accessToken');
+    const accessToken = TokenService.getToken();
     if (accessToken) {
-        // Decode the JWT token
         const decodedToken = jwtDecode(accessToken);
-        const email = decodedToken.unique_name;
-        console.log(email);
+        const email = decodedToken.sub;
+        console.log('the email',email);
+        
         // Set the auth header
         this.setAuthHeader(accessToken);
 

@@ -10,6 +10,8 @@ import UserProfile from '../views/UserProfile.vue'; // User profile component
 import OrderHistory from '../views/OrderHistory.vue'; // Order history component
 import ManageUsers from '../views/ManageUsers.vue'; // Component for managing users
 import ManageProducts from '../views/ManageProducts.vue'; // Component for managing products
+import ShoppingCart from '../views/shopping-cart.vue';
+import UserProducts from '../views/UserProducts.vue';
 
 const routes = [
   {
@@ -46,6 +48,18 @@ const routes = [
     name: 'OrderHistory',
     component: OrderHistory, // Order history component
     meta: { requiresAuth: true } // Requires authentication
+  },
+  {
+    path: '/cart',
+    name: 'ShoppingCart',
+    component: ShoppingCart, // Admin dashboard component
+    meta: { requiresAuth: true } // Requires authentication and admin role
+  },
+  {
+    path: '/products',
+    name: 'UserProducts',
+    component: UserProducts, // Admin dashboard component
+    meta: { requiresAuth: true } // Requires authentication and admin role
   },
   {
     path: '/admin/dashboard',
