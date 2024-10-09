@@ -73,7 +73,20 @@ namespace UserService.Services
         {
             try
             {
-                var result = await _userManager.UpdateAsync(user);
+                var existingUser = await _userManager.FindByIdAsync(user.Id);
+                if (existingUser == null)
+                {
+                    _logger.LogError("User not found: {UserId}", user.Id);
+                    return false;
+                }
+
+                // Update the fields
+                existingUser.UserName = user.UserName;
+                existingUser.Email = user.Email;
+                existingUser.PhoneNumber = user.PhoneNumber;
+                // Add other fields to update as necessary
+
+                var result = await _userManager.UpdateAsync(existingUser);
                 return result.Succeeded;
             }
             catch (Exception ex)
@@ -82,6 +95,7 @@ namespace UserService.Services
                 return false;
             }
         }
+
 
         public async Task<bool> DeleteUserAsync(string userId)
         {
